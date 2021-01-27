@@ -26,19 +26,17 @@ const app = express();
 
 const PORT = process.env.PORT || 3001;
 app.engine("handlebars", hbs.engine);
-// alternately like this:
-// app.engine('handlebars', exphbs({ can set defaultLayout and helpers here}));
 app.set("view engine", "handlebars");
 
 // use session
 // app.use(session(sess));
 // middleware for post requests
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 // // use static files in public
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(routes);
+app.use(routes);
 
 // initialize connection to the database then start the server
 sequelize.sync({ force: false }).then(() => {
