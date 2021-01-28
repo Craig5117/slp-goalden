@@ -7,20 +7,28 @@ Goal.init (
     {
         // goal id
         id: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
         // name
         date: {
-            type:dataTypes.STRING,
+            type:DataTypes.STRING,
             allowNull: false,
         },
         // description
         description: {
-            type:dataTypes.STRING,
+            type:DataTypes.STRING,
             allowNull: false
+        },
+        // user_id through User Model
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {

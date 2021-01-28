@@ -2,6 +2,7 @@ const User = require('./User');
 const Student = require('./Student');
 const Goal = require('./Goal');
 const Trial = require('./Trial');
+const Student_Goal = require('./Student_Goal')
 
 // User associations
     User.hasMany(Student, {

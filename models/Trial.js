@@ -7,7 +7,7 @@ Trial.init (
     {
         // trial id
         id: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
@@ -16,12 +16,12 @@ Trial.init (
         
         // number attempted
         attempted: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         // number successful
         successful: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 // validate that success is not more than attempted
@@ -31,9 +31,18 @@ Trial.init (
                     }
                 }
             }
-        }
+        },
+
         // *** percent will be configured on the routes by dividing attempted/successful *100 ***
 
+        // student_goal_id through Student_Goal Model
+        student_goal_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'student_goal',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
