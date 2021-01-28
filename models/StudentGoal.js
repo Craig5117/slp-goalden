@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Student_Goal extends Model {}
+class StudentGoal extends Model {}
 
-Student_Goal.init (
+StudentGoal.init (
     {
         // student goal id
         id: {
@@ -38,4 +38,4 @@ Student_Goal.init (
 )
 
 
-module.exports = { Student_Goal};
+module.exports = StudentGoal;

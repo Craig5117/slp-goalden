@@ -2,65 +2,54 @@ const User = require('./User');
 const Student = require('./Student');
 const Goal = require('./Goal');
 const Trial = require('./Trial');
-const Student_Goal = require('./Student_Goal')
+const StudentGoal = require('./StudentGoal');
 
-// User associations
-    User.hasMany(Student, {
-        foreignKey: 'user_id'
-    });
+// User -- Student associations (User has many Students, and Students belong to User through user_id in Student Model)
+User.hasMany(Student, {
+    foreignKey: 'user_id'
+});
 
-    User.belongsToMany(Student, {
-        foreignKey: 'user_id'
-    })
+Student.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
-// Student associations
-    Student.belongsTo(User, {
-        foreignKey: 'student_id'
-    });
+// User -- Goal associations (User has many Goals, and Goals belong to User through user_id in Goal Model)
+User.hasMany(Goal, {
+    foreignKey: 'user_id'
+});
 
-    Student.hasMany(Goal, {
-        foreignKey: 'student_id'
-    });
+Goal.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
-    Student.hasMany(Trial, {
-        foreignKey: 'student_id'
-    });
+   
+// StudentGoal -- Student associations (Student has many StudentGoals, and StudentGoal belongs to Student through student_id in StudentGoal Model)
+Student.hasMany(StudentGoal, {
+    foreignKey: 'student_id'
+});
 
-    Student.belongsToMany(Goal, {
-        foreignKey: 'student_id'
-    });
+StudentGoal.belongsTo(Student, {
+    foreignKey: 'student_id'
+});
 
-    Studnet.belongsToMany(Trials, {
-        foreignKey: 'student_id'
-    });
+// StudentGoal -- Goal associations (Goal has many StudentGoals, and StudentGoal belongs to Goal through goal_id in Goal Model)
+Goal.hasMany(StudentGoal, {
+    foreignKey: 'goal_id'
+});
 
-// Goal associations
+StudentGoal.belongsTo(Goal, {
+    foreignKey: 'goal_id'
+});
 
-    Goal.hasMany(Student, {
-        foreignKey: 'student_id'
-    });
+// Trial -- StudentGoal associations (StudentGoal has many Trials, and Trial belongs to StudentGoal through student_goal_id)
+StudentGoal.hasMany(Trial, {
+    foreignKey: 'student_goal_id'
+});
 
-    Goal,hasMany(Trial, {
-        foreignKey: 'trial_id'
-    });
-
-    Goal.belongsToMany(Student, {
-        foreignKey: 'student_id'
-    });
-
-    Goal.belongsToMany(Trial, {
-        foreignKey: 'trial_id'
-    });
-
-// Trial associations
-    Trial.belongsTo(Student, {
-        foreignKey: 'student_id'
-    });
-
-    Trial.belongsTo(Goal, {
-        foreignKey: 'goal_id'
-    });
-
-    module.exports = { User, Student, Goal, Trial };
+Trial.belongsTo(StudentGoal, {
+    foreignKey: 'student_goal_id'
+});
+   
+module.exports = { User, Student, Goal, StudentGoal, Trial}
 
 
