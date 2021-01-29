@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     res.render('login');
 });
 
-router.get('/trial-submit', (req, res) => {
+router.get('/trial-submit/:id', (req, res) => {
     res.render('trial-submission');
 })
 
