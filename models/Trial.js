@@ -31,7 +31,7 @@ Trial.init (
         student_goal_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'student_goal',
+                model: 'studentgoal',
                 key: 'id'
             }
         }

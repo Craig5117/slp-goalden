@@ -41,7 +41,7 @@ StudentGoal.init (
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'goal'
+        modelName: 'studentgoal'
     }
 )
 
