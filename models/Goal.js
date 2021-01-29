@@ -13,7 +13,7 @@ Goal.init (
             autoIncrement: true
         },
         // name
-        date: {
+        name: {
             type:DataTypes.STRING,
             allowNull: false,
         },

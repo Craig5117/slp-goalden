@@ -49,6 +49,15 @@ StudentGoal.hasMany(Trial, {
 Trial.belongsTo(StudentGoal, {
     foreignKey: 'student_goal_id'
 });
+
+// User -- StudentGoal assoications (User has many StudentGoals, and StudentGoal belongs to User through user_id in User Model)
+User.hasMany(StudentGoal, {
+    foreignKey: 'user_id'
+});
+
+StudentGoal.belongsTo(User, {
+    foreignKey: 'user_id'
+});
    
 module.exports = { User, Student, Goal, StudentGoal, Trial}
 

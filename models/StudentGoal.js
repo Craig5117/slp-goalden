@@ -27,7 +27,15 @@ StudentGoal.init (
                 model: 'goal',
                 key: 'id'
             }
-        }
+        },
+        // user_id through User Model
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
     },
     {
         sequelize,

@@ -12,29 +12,21 @@ Trial.init (
             primaryKey: true,
             autoIncrement: true
         },
-        // *** date will be pulled from created_at field ***
-        
-        // number attempted
-        attempted: {
+        // date
+        date: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        // number successful
+        // number successful as fraction
         successful: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                // validate that success is not more than attempted
-                isGreaterThanAttempted(value) {
-                    if (parseInt(value) < parseInt(this.attempted)) {
-                    throw new Error("success can't be more than attempted");
-                    }
-                }
-            }
+            type: DataTypes.STRING,
+            allowNull: false
         },
-
-        // *** percent will be configured on the routes by dividing attempted/successful *100 ***
-
+        // percent
+        percent: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         // student_goal_id through Student_Goal Model
         student_goal_id: {
             type: DataTypes.INTEGER,
