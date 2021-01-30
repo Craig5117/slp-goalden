@@ -1,6 +1,7 @@
 const seedUsers = require('./user-seeds');
 const seedStudents = require('./student-seeds');
 const seedGoals = require('./goal-seeds');
+const seedStudentGoals = require('./studentgoal-seeds')
 
 const sequelize = require('../../config/connection');
 
@@ -15,6 +16,9 @@ const seedAll = async () => {
     console.log('--------------------------------');
 
     await seedGoals();
+    console.log('--------------------------------');
+
+    await seedStudentGoals();
     console.log('--------------------------------');
     
 };
