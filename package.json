@@ -10,7 +10,8 @@
     "sequelize": "^6.4.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node db/seeds/index.js"
   },
   "name": "speech-goal-bank",
   "description": "",
