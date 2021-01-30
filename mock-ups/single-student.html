@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="../public/stylesheets/materialize.css">
+
+<div>
+    <h2 {{ name }}>
+        <div class="goals-wrapper">
+            <div class="goal-container">
+                {{#each student_goals as |goal|}}
+                <div>
+                    <h3> {{goal.goal_name}} </h3>
+                    <p> {{ goal.description }} </p>
+                    <a href={{goal.id}}>+Trial Data</a>
+                    {{#each goal.trials as |trial|}}
+                    <div>
+                        <h4> Date of Trials </h4>
+                        <p> {{trial.date}} </p>
+                        <h4> Successful Trials </h4>
+                        <div>
+                            <p> {{successful}} </p>
+                            <p> {{percent}} </p>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </h2>
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
