@@ -34,6 +34,14 @@ Trial.init (
                 model: 'studentgoal',
                 key: 'id'
             }
+        },
+          // user_id through User Model
+          user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {
