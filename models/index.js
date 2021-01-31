@@ -58,6 +58,14 @@ User.hasMany(StudentGoal, {
 StudentGoal.belongsTo(User, {
     foreignKey: 'user_id'
 });
+
+Trial.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
+User.hasMany(Trial, {
+    foreignKey: 'user_id'
+});
    
 module.exports = { User, Student, Goal, StudentGoal, Trial}
 
