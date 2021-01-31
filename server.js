@@ -35,10 +35,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
-app.use(apiRoutes);
+app.use("/api", apiRoutes);
 app.use(htmlRoutes);
 
 // initialize connection to the database then start the server
 sequelize.sync({ force: true }).then(() => {
-	app.listen(PORT, () => console.log("Now listening"));
+	app.listen(PORT, () => console.log("Now listening on http://localhost:3001"));
 });
