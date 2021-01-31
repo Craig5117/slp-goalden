@@ -1,0 +1,18 @@
+<div>
+    <h2>
+      username
+    </h2>
+    <ul {{#each students as |students|}}></ul>  
+    <li>
+      <a href={{student.id}}></a>
+    <h3>
+        {{student.name}}
+    </h3>
+    </li>
+    {{/each}}
+  </div>  
+    <footer>
+      <p>SLP Goalden &copy; 2021</p>
+        <a class="waves-effect waves-light btn">Student</a>
+    </footer>    
+

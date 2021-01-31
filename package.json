@@ -12,11 +12,20 @@
   "scripts": {
     "start": "node server.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick"
+    }
+  },
   "name": "speech-goal-bank",
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Craig5117/speech-goal-bank.git"
