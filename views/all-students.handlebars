@@ -2,14 +2,16 @@
     <h2>
       username
     </h2>
-    <ul {{#each students as |students|}}></ul>  
+    <ul> {{#each students as |students|}} 
     <li>
-      <a href={{student.id}}></a>
+      <a href={{student.id}}>
     <h3>
         {{student.name}}
     </h3>
+    </a>
     </li>
     {{/each}}
+    </ul>
   </div>  
     <footer>
       <p>SLP Goalden &copy; 2021</p>
