@@ -14,7 +14,7 @@ Trial.init (
         },
         // date
         date: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         // number successful as fraction
@@ -32,6 +32,14 @@ Trial.init (
             type: DataTypes.INTEGER,
             references: {
                 model: 'studentgoal',
+                key: 'id'
+            }
+        },
+          // user_id through User Model
+          user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
                 key: 'id'
             }
         }
