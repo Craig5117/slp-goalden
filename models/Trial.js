@@ -14,7 +14,7 @@ Trial.init (
         },
         // date
         date: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         // number successful as fraction
