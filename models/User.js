@@ -15,6 +15,11 @@ User.init (
             primaryKey: true,
             autoIncrement: true
         },
+        // username
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         // email
         email: {
             type: DataTypes.STRING,
@@ -31,9 +36,11 @@ User.init (
             type: DataTypes.STRING,
             allowNull: false,
             // Has to be at least 8 characters long
-            validate: {
-                len: [8]
-            }
+            //password input must be between 8 and 50 characters in length, may use upper/lowercase, may use numbers, may use special chars
+            validate: /^[0-9A-Za-z!@.,;:'"?-]{8,50}\z/
+            // {
+            //     len: [8]
+            // }
         }
     },
     {
