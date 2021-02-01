@@ -2,11 +2,12 @@
     <h2>
       username
     </h2>
-    <ul> {{#each students as |students|}} 
+    <ul> 
+      {{#each students as |student|}} 
       <li>
-        <a href={{student.id}}>
+        <a href="student/{{student.id}}">
           <h3>
-              {{student.name}}
+              {{student.last_name}}{{#if student.first_name}}, {{student.first_name}}{{/if}}
           </h3>
         </a>
       </li>
@@ -15,5 +16,5 @@
   </div>  
 <footer>
   <p>SLP Goalden &copy; 2021</p>
-    <a class="waves-effect waves-light btn">Student</a>
+    <a class="waves-effect waves-light btn">+ Student</a>
 </footer>    
