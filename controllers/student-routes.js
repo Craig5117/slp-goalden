@@ -4,10 +4,11 @@ const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
 
 router.get("/", (req, res) => {
+    const userId = req.session.user_id;
   Student.findAll({
     where: {
-      // this needs to be changed to req.session.user_id
-      user_id: 2,
+      // finds all students belonging to current user
+      user_id: userId,
     },
     attributes: ["id", "user_id", "last_name", "first_name"],
     include: [
@@ -21,8 +22,8 @@ router.get("/", (req, res) => {
       const students = studentData.map((student) =>
         student.get({ plain: true })
       );
-      // again user_id needs to be replaced with req.session.user_id
-      if (students[0].user_id === 2) {
+      // checks to see if data matches with current user
+      if (students[0].user_id === userId) {
           const username = students[0].user.username
         res.render("all-students", { students, username });
       } else {
@@ -36,6 +37,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/student/:id", (req, res) => {
+    const userId = req.session.user_id;
   StudentGoal.findAll({
     where: {
       student_id: req.params.id,
@@ -60,6 +62,7 @@ router.get("/student/:id", (req, res) => {
       const studentGoals = studentGoalData.map((studentGoal) =>
         studentGoal.get({ plain: true })
       );
+      // check user id here
       res.json(studentGoals);
     })
     .catch((err) => {
@@ -69,9 +72,9 @@ router.get("/student/:id", (req, res) => {
 });
 
 router.get("/:number", (req, res) => {
+    const userId = req.session.user_id;
   studNumber = req.params.number;
-  // needs to be replaced with req.session.user_id
-  userId = 2;
+  // Gets user id from session to render into form data-userID attribute
   res.render("student-submissions", { studNumber, userId });
 });
 

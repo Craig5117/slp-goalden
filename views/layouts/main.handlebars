@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +10,27 @@
 
     <title>SLP Goalden</title>
 </head>
+
 <body>
     <div>
-      <header>
-          <h1>SLP Goalden</h1>
-      </header>
-      <main>
-          {{{ body }}}
-      </main> 
+        <header>
+            <h1>SLP Goalden</h1>
+            {{#if loggedIn}}
+            <a href="" id="logout" class="btn waves-effect waves-light">
+                <i class="material-icons left">
+                    Log Out
+                </i>
+            </a>
+            {{/if}}
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
     </div>
-       
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    {{#if loggedIn}}
+    <script src="javascript/logout.js"></script>
+    {{/if}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>

@@ -4,10 +4,11 @@ const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
 
 router.get("/", (req, res) => {
+    const userId = req.session.user_id;
     Goal.findAll({
         where: {
             // this needs to be changed to req.session.user_id
-            user_id: 6,
+            user_id: userId,
         },
         attributes: [
             "id",

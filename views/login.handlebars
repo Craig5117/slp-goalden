@@ -1,15 +1,19 @@
 <div>
-    <div  class="row">
+    <div class="row">
         <h2>Login</h2>
-        <form class="col s6">
+        <form class="col s6" id="login-form">
             <div class="row">
                 <div class="input-field col s6">
-                    <input type="email" name="email_login" id="email_login" class="validate"/>
+                    <input type="email" name="email_login" id="email_login" class="validate" />
                     <label for="email_login" class="">Email</label>
                 </div>
             </div>
-            <label htmlFor="id" for="password_login">Password</label>
-            <input type="text" name="password_login" />
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="password_login">Password</label>
+                    <input type="text" name="password_login" id="password_login"/>
+                </div>
+            </div>
             <button type="submit">Login</button>
         </form>
     </div>
@@ -18,7 +22,7 @@
         <h2>Sign-Up</h2>
         <form>
             <label for="username_signup" class="">Username</label>
-            <input type="text" name="username_signup"/>
+            <input type="text" name="username_signup" />
             <label htmlFor="id" for="email_signup" class="">Email</label>
             <input type="email" name="email_signup" />
             <label htmlFor="id" for="password_signup">Password</label>
@@ -27,3 +31,5 @@
         </form>
     </div>
 </div>
+
+<script src="/javascript/login.js"></script>
