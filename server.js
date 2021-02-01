@@ -35,9 +35,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
-app.use("/api", apiRoutes);
-app.use(htmlRoutes);
-
 // initialize connection to the database then start the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
