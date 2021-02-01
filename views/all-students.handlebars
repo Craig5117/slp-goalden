@@ -5,7 +5,7 @@
     <ul> 
       {{#each students as |student|}} 
       <li>
-        <a href="student/{{student.id}}">
+        <a href="/students/student/{{student.id}}">
           <h3>
               {{student.last_name}}{{#if student.first_name}}, {{student.first_name}}{{/if}}
           </h3>
