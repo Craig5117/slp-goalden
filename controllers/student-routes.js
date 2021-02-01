@@ -70,7 +70,9 @@ router.get("/student/:id", (req, res) => {
 
 router.get("/:number", (req, res) => {
   studNumber = req.params.number;
-  res.render("student-submissions", { studNumber });
+  // needs to be replaced with req.session.user_id
+  userId = 2;
+  res.render("student-submissions", { studNumber, userId });
 });
 
 module.exports = router;
