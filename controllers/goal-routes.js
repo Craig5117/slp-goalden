@@ -28,6 +28,11 @@ router.get("/", (req, res) => {
       });
 });
 
+router.get('/submit', (req, res) => {
+    const userId = req.session.user_id;
+    res.render('goal-submission', {userId})
+});
+
 // option to add single goal route here
 // this would link to a page where you could
 // update or delete a goal via api routes

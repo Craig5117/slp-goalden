@@ -71,7 +71,7 @@ router.get("/student/:id", (req, res) => {
     });
 });
 
-router.get("/:number", (req, res) => {
+router.get("/submit/:number", (req, res) => {
     const userId = req.session.user_id;
   studNumber = req.params.number;
   // Gets user id from session to render into form data-userID attribute

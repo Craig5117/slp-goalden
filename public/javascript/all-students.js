@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
              studNumber = 30;
          }
          elems[0].M_Modal.close();
-        document.location.replace(`/students/${studNumber}`)
+        document.location.replace(`/students/submit/${studNumber}`)
      })
     
 });
