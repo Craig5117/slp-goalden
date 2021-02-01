@@ -11,3 +11,9 @@ form {
 /* * {
     background-color: blue;
 };   */
+.modal-input{
+    padding: 0 3em;
+}
+.modal-input label {
+    padding-left: 3em;
+}

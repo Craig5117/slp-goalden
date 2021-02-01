@@ -1,13 +1,14 @@
 const sequelize = require("./config/connection");
 const express = require("express");
 const routes = require("./controllers");
-// const helpers = require("./utils/helpers.js");
+const helpers = require("./utils/helpers.js");
 const path = require("path");
 const exphbs = require("express-handlebars");
 // can set defaultLayout in hbs object
-const hbs = exphbs.create({ });
+const hbs = exphbs.create({ helpers });
 // const session = require("express-session");
 // const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 
 // const sess = {
 //   secret: "aywtd?inshfy?283",

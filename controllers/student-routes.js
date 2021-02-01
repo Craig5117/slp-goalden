@@ -65,4 +65,9 @@ router.get("/student/:id", (req, res) => {
     });
 })
 
+router.get("/:number", (req, res) => {
+    studNumber = req.params.number;
+    res.render("student-submissions", { studNumber });
+})
+
 module.exports = router;
