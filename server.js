@@ -26,18 +26,17 @@ const hbs = exphbs.create({ helpers });
 const app = express();
 
 const PORT = process.env.PORT || 3001;
+
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
-// use session
-// app.use(session(sess));
-// middleware for post requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // // use static files in public
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
-app.use(routes);
+app.use("/api", apiRoutes);
+app.use(htmlRoutes);
 
 // initialize connection to the database then start the server
 sequelize.sync({ force: false }).then(() => {
