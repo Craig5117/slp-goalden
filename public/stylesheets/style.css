@@ -1,16 +1,25 @@
+header {
+    color: #516360;
+}
+body {
+    background-color: #edd8ca;
+}
+h3 {
+    color: #516360;
+    font-weight: 300;
+}
 .input-field {
-    width: 50rem;
+    width: 20rem; 
+    text-align: center;
 }
-.trial-form {
-    width: 50%;
+.row { 
+    padding: 2rem;
+    width: 25rem;
+    flex-direction: column;
+    /* border: 5rem;
+    border-color: #516360; */
+    background-color: #cedbd8;
 }
-form {
-    border: 2rem;
-    border-color: #6d9387;
-}
-/* * {
-    background-color: blue;
-};   */
 .modal-input{
     padding: 0 3em;
 }
