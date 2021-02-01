@@ -1,0 +1,26 @@
+<div>
+    <h2> {{name}} </h2>
+    <div class="goals-wrapper">
+        <div class="goal-container">
+            {{#each student_goals as |goal|}}
+            <div>
+                <h3> {{goal.goal_name}} </h3>
+                <p> {{goal.description}} </p>
+                <a href={{goal.id}}>Trial Data</a>
+                
+                <div>
+                {{#each goal.trials as |trial|}}
+                    <h4> Date of Trials </h4>
+                    <p> {{trial.date}} </p>
+                    <h4> Successful Trials </h4>
+                    <div>
+                        <p> {{successful}} </p>
+                        <p> {{percent}} </p>
+                    </div>
+                {{/each}}
+                </div>       
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
