@@ -20,9 +20,8 @@ async function goalSubmitHandler(event) {
         //           "Content-Type": "application/json",
         //         },
         //       });
-        //  !!!!!!!!!!! Redo this logic
         //       if (response.ok) {
-        //         document.location.replace(`/student${studentId}`);
+        //         document.location.replace(`/goals`);
         //       } else {
         //         alert(response.statusText);
         //       }
