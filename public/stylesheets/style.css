@@ -1,3 +1,19 @@
-/* .input-field {
-    width: 15rem;
-} */
+.input-field {
+    width: 50rem;
+}
+.trial-form {
+    width: 50%;
+}
+form {
+    border: 2rem;
+    border-color: #6d9387;
+}
+/* * {
+    background-color: blue;
+};   */
+.modal-input{
+    padding: 0 3em;
+}
+.modal-input label {
+    padding-left: 3em;
+}

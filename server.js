@@ -1,13 +1,14 @@
 const sequelize = require("./config/connection");
 const express = require("express");
 const routes = require("./controllers");
-// const helpers = require("./utils/helpers.js");
+const helpers = require("./utils/helpers.js");
 const path = require("path");
 const exphbs = require("express-handlebars");
 // can set defaultLayout in hbs object
-const hbs = exphbs.create({ });
+const hbs = exphbs.create({ helpers });
 // const session = require("express-session");
 // const SequelizeStore = require("connect-session-sequelize")(session.Store);
+
 
 // const sess = {
 //   secret: "aywtd?inshfy?283",
@@ -39,6 +40,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
 // initialize connection to the database then start the server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
