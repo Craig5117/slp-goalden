@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   Student.findAll({
     where: {
       // this needs to be changed to req.session.user_id
-      user_id: 1,
+      user_id: 2,
     },
     attributes: ["id", "user_id", "last_name", "first_name"],
     include: [
@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
         student.get({ plain: true })
       );
       // again user_id needs to be replaced with req.session.user_id
-      if (students[0].user_id === 1) {
+      if (students[0].user_id === 2) {
           const username = students[0].user.username
         res.render("all-students", { students, username });
       } else {

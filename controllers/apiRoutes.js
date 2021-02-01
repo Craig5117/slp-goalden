@@ -1,57 +1,9 @@
 const router = require("express").Router();
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
 
-//Student routes
 
-router.get("/students", (req, res) => {
-	Student.findAll({}).then((data) => res.json(data));
-});
 
-//POST route for saving a student
-router.post("/student", (req, res) => {
-	Student.create({
-		user_id: req.body.user_id,
-		first_name: req.body.first_name,
-		last_name: req.body.last_name,
-	}).then((data) => {
-		res.send("student created");
-    })
-    .catch((error) => res.json(error))
-});
 
-//DELETE route for deleting a student
-router.delete("/student", (req, res) => {
-	Student.destroy({
-		where: {
-			student: req.params.student,
-		},
-	}).then((student) => {
-		res.delete(student);
-	});
-});
-
-//PUT route for updating a student
-router.put("/student", (req, res) => {
-	Student.update(
-		{
-			user_id: req.body.user_id,
-			first_name: req.body.first_name,
-			last_name: req.body.last_name,
-		},
-		{
-			where: {
-				student: req.params.user,
-			},
-		}
-	).then((student) => {
-		res.update(student);
-	});
-});
-
-//users routes
-router.get("/users", (req, res) => {
-	User.findAll({}).then((data) => res.json(data));
-});
 
 router.get("/goal", (req, res) => {
 	Goal.findAll({}).then((data) => res.json(data));
@@ -65,45 +17,7 @@ router.get("/trial", (req, res) => {
 	Trial.findAll({}).then((data) => res.json(data));
 });
 
-//POST route for saving a new user
-router.post("/user", (req, res) => {
-	User
-		.create({
-			email: req.body.email,
-			password: req.body.password,
-		})
-		.then((data) => {
-			res.send("user creator");
-		});
-});
 
-//DELETE route for deleting a user
-router.delete('/user', (req, res) => {
-  user.destroy({
-    where: {
-      user: req.params.user
-    }
-  }).then((user) => {
-    res.delete(user);
-  });
-});
-
-//PUT route for updating a user
-router.put('/user', (req, res) => {
-  user.update(
-    {
-      email: req.body.email,
-      password: req.body.password
-    },
-    {
-      where: {
-        user: req.params.user
-      }
-    }
-  ).then((user) => {
-    res.update(user);
-  });
-});
 
 //POST route for saving a goal
 router.post("/goal", (req, res) => {
@@ -233,4 +147,4 @@ router.put('/trial', (req, res) => {
   });
 });
 
-module.exports = router;
+
