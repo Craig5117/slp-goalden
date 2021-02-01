@@ -35,5 +35,4 @@ async function signupFormHandler(event) {
     }
 }
 
-// check id in template
 document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);

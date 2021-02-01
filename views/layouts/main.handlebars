@@ -16,6 +16,11 @@
         <header>
             <h1>SLP Goalden</h1>
             {{#if loggedIn}}
+            <a href="/dashboard" class="btn waves-effect waves-light">
+            <i class="material-icons left">
+                   Dashboard
+                </i>
+            </a>
             <a href="" id="logout" class="btn waves-effect waves-light">
                 <i class="material-icons left">
                     Log Out
@@ -28,7 +33,7 @@
         </main>
     </div>
     {{#if loggedIn}}
-    <script src="javascript/logout.js"></script>
+    <script src="/javascript/logout.js"></script>
     {{/if}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>

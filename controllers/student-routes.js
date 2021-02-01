@@ -25,9 +25,9 @@ router.get("/", (req, res) => {
       // checks to see if data matches with current user
       if (students[0].user_id === userId) {
           const username = students[0].user.username
-        res.render("all-students", { students, username });
+        res.render("all-students", { students, username, loggedIn: req.session.loggedIn });
       } else {
-        res.status(401).render("unauthorized");
+        res.status(401).render("unauthorized", {loggedIn: req.session.loggedIn});
       }
     })
     .catch((err) => {
@@ -75,7 +75,7 @@ router.get("/:number", (req, res) => {
     const userId = req.session.user_id;
   studNumber = req.params.number;
   // Gets user id from session to render into form data-userID attribute
-  res.render("student-submissions", { studNumber, userId });
+  res.render("student-submissions", { studNumber, userId, loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
