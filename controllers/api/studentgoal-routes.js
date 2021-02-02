@@ -1,51 +1,91 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const { StudentGoal } = require("../../models");
+const { StudentGoal, Student, Goal, Trial } = require("../../models");
 
-router.get("/studentGoal", (req, res) => {
-	StudentGoal.findAll({}).then((data) => res.json(data));
+router.get("/", (req, res) => {
+	StudentGoal.findAll({
+        where: {
+            user_id: req.session.user_id
+        },
+        attributes: ["id", "user_id", "student_id"],
+        include: [
+          {
+            model: Student,
+            attributes: ["last_name", "first_name"],
+          },
+          {
+            model: Goal,
+            attributes: ["name", "description"],
+          },
+          {
+            model: Trial,
+            attributes: ["date", "successful", "percent"],
+          },
+        ],
+    })
+    .then((studentGoalData) => res.json(studentGoalData))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 //POST route for saving a new studentgoal
-router.post("/studentGoal", (req, res) => {
+router.post("/", (req, res) => {
 	StudentGoal
 		.create({
 			student_id: req.body.student_id,
             goal_id: req.body.goal_id,
-            user_id: req.body.user_id,
+            user_id: req.body.user_id
 		})
-		.then((data) => {
-			res.send("studentGoal creator");
-		});
+		.then((studentGoalData) => res.json(studentGoalData))
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 // DELETE route for deleting a studentGoal
-router.delete('/studentGoal', (req, res) => {
-  studentGoal.destroy({
+router.delete('/:id', (req, res) => {
+  StudentGoal.destroy({
     where: {
-      studentGoal: req.params.user
+      id: req.params.id
     }
-  }).then((studentGoal) => {
-    res.delete(studentGoal);
-  });
+  }).then((studentGoalData) => {
+    if (!studentGoalData) {
+        res.status(404).json({ message: "No student goal found with this id" });
+        return;
+      }
+      res.json(studentGoalData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // PUT route for updating a studentGoal
-router.put('/studentGoal', (req, res) => {
-  studentGoal.update(
+router.put('/:id', (req, res) => {
+  StudentGoal.update(
     {
-      student_id: req.body.student_id,
       goal_id: req.body.goal_id,
-      user_id: req.body.user_id,
     },
     {
       where: {
-        studentGoal: req.params.studentGoal
+        id: req.params.id
       }
     }
-  ).then((studentGoal) => {
-    res.update(studentGoal);
-  });
+  ).then((studentGoalData) => {
+    if (!studentGoalData) {
+        res.status(404).json({ message: "No student goal found with this id" });
+        return;
+      }
+      res.json(studentGoalData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
