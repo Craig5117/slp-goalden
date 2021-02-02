@@ -1,8 +1,26 @@
 <div>
-    <div>
-        <form>
-            <label for="Student"></label>
-            <input type="text" name="Student"/>
-        </form>
+    <div class="goals-wrapper" >
+        <h2 class="student-name" style="border: 3px #516360 solid;"> {{name}} </h2>
+        <div class="goal-container"  >
+            {{#each student_goals as |goal|}}
+            <div class="input-field">
+                <h3> {{goal.goal_name}} </h3>
+                <p> {{goal.description}} </p>
+                <a href={{goal.id}}>Trial Data</a>
+                
+                <div>
+                {{#each goal.trials as |trial|}}
+                    <h4> Date of Trials </h4>
+                    <p> {{trial.date}} </p>
+                    <h4> Successful Trials </h4>
+                    <div>
+                        <p> {{successful}} </p>
+                        <p> {{percent}} </p>
+                    </div>
+                {{/each}}
+                </div>       
+            </div>
+            {{/each}}
+        </div>
     </div>
 </div>
