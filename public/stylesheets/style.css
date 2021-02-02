@@ -1,16 +1,56 @@
+/* Color Bank:
+#516360
+#6d9387
+#cedbd8
+#edd8ca
+#d3c6b7 */
+
+header {
+    color: #516360;
+}
+body {
+    background-color: #edd8ca;
+}
+
+h2 {
+    color: #516360;
+}
+
+h3 {
+    color: #516360;
+    font-weight: 300;
+}
+h4 {
+    color: #516360;
+    font-weight: 300;
+}
 .input-field {
-    width: 50rem;
+    width: 25rem; 
+    text-align: center;
+    background-color: #cedbd8;
 }
-.trial-form {
-    width: 50%;
+.student-name {
+    width: 25rem; 
+    text-align: center;
+    background-color: #516360;
+    color: #d3c6b7;
 }
-form {
-    border: 2rem;
-    border-color: #6d9387;
+.goals-wrapper {
+    width: 25rem; 
+    text-align: center;
+    background-color: #cedbd8;
 }
-/* * {
-    background-color: blue;
-};   */
+.goal-container {
+    display: flex-start;
+}
+form { 
+    justify-content: flex-start;
+    padding: 2rem;
+    width: 30rem;
+    /* border: 5rem;
+    border-color: #516360; */
+    background-color: #cedbd8;
+}
 .modal-input{
     padding: 0 3em;
 }
