@@ -29,6 +29,12 @@ h4 {
     text-align: center;
     background-color: #cedbd8;
 }
+.wrapper {
+    width: 40rem;
+    background-color: #cedbd8;
+
+
+}
 .student-name {
     width: 25rem; 
     text-align: center;
