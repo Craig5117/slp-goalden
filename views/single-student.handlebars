@@ -1,6 +1,9 @@
 <div>
-    <div class="goals-wrapper" >
+     <div>
         <h2 class="student-name" style="border: 3px #516360 solid;"> {{studentName}} </h2>
+        <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to Student</a>
+    </div>
+    <div class="goals-wrapper" >
         <div class="goal-container"  >
             {{#each studentGoals as |studentGoal|}}
             <div class="input-field">
@@ -24,3 +27,7 @@
         </div>
     </div>
 </div>
+
+
+
+<script src="/javascript/single-student.js"></script>

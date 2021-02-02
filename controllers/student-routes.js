@@ -70,11 +70,12 @@ router.get("/student/:id", (req, res) => {
       );
       // check user id here
       //   console.log(studentGoals)
-      let studentName = studentGoals[0].student.last_name;
+      const studentId = studentGoals[0].student_id
+;      let studentName = studentGoals[0].student.last_name;
       if (studentGoals[0].student.first_name) {
         studentName += `, ${studentGoals[0].student.first_name}`;
       }
-      res.render("single-student", { studentGoals, studentName });
+      res.render("single-student", { studentGoals, studentName, studentId });
     })
     .catch((err) => {
       console.log(err);
@@ -140,5 +141,10 @@ router.get("/trial-submit/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+router.get('/add-studentgoal/:id', (req, res) => {
+    res.render("add-studentgoal")
+});   
+
 
 module.exports = router;
