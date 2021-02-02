@@ -1,9 +1,9 @@
 const router = require("express").Router();
-// const withAuth = require("../utils/auth");
+const withAuth = require("../utils/auth");
 const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   const userId = req.session.user_id;
   Student.findAll({
     where: {
@@ -42,7 +42,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/student/:id", (req, res) => {
+router.get("/student/:id", withAuth, (req, res) => {
   const userId = req.session.user_id;
   StudentGoal.findAll({
     where: {
@@ -83,7 +83,7 @@ router.get("/student/:id", (req, res) => {
     });
 });
 
-router.get("/submit/:number", (req, res) => {
+router.get("/submit/:number", withAuth, (req, res) => {
   const userId = req.session.user_id;
   studNumber = req.params.number;
   // Gets user id from session to render into form data-userID attribute
@@ -94,7 +94,7 @@ router.get("/submit/:number", (req, res) => {
   });
 });
 
-router.get("/trial-submit/:id", (req, res) => {
+router.get("/trial-submit/:id", withAuth, (req, res) => {
   StudentGoal.findOne({
     where: {
       id: req.params.id,
@@ -142,7 +142,7 @@ router.get("/trial-submit/:id", (req, res) => {
     });
 });
 
-router.get('/add-studentgoal/:id', (req, res) => {
+router.get('/add-studentgoal/:id', withAuth, (req, res) => {
     const userId = req.session.user_id;
     const username = req.session.username;
     let studentName;

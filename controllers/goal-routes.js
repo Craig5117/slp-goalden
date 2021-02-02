@@ -1,9 +1,9 @@
 const router = require("express").Router();
-// const withAuth = require("../utils/auth");
 const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
+const withAuth = require("../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
     const userId = req.session.user_id;
     Goal.findAll({
         where: {
@@ -28,7 +28,7 @@ router.get("/", (req, res) => {
       });
 });
 
-router.get('/submit', (req, res) => {
+router.get('/submit', withAuth, (req, res) => {
     const userId = req.session.user_id;
     res.render('goal-submission', {userId, loggedIn: req.session.loggedIn})
 });

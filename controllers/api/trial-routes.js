@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Trial } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Trial.findAll({
     where: {
       student_goal_id: req.params.id,
@@ -16,7 +17,7 @@ router.get("/:id", (req, res) => {
 });
 
 //POST route for saving a new trial
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Trial.create({
     date: req.body.date,
     successful: req.body.successful,
@@ -32,7 +33,7 @@ router.post("/", (req, res) => {
 });
 
 // PUT route for updating a trial
-router.put("/trial", (req, res) => {
+router.put("/trial", withAuth, (req, res) => {
   Trial.update(
     {
       date: req.body.date,
@@ -45,7 +46,7 @@ router.put("/trial", (req, res) => {
       },
     }
   )
-    .then((trial) => {
+    .then((dbTrialData) => {
       if (!dbTrialData) {
         res.status(404).json({ message: "No student goal found with this id" });
         return;
@@ -59,7 +60,7 @@ router.put("/trial", (req, res) => {
 });
 
 // DELETE route for deleting a trial
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Trial.destroy({
     where: {
       id: req.params.id,

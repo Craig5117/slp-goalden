@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-// add withAuth helper
 const { User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 //users routes
 router.get("/", (req, res) => {
@@ -80,7 +80,7 @@ router.post("/login", (req, res) => {
   });
 
 //PUT route for updating a user
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     User.update(
       {
         username: req.body.username,
@@ -107,7 +107,7 @@ router.put("/:id", (req, res) => {
   });
 
 //DELETE route for deleting a user
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id,

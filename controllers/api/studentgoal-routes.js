@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { StudentGoal, Student, Goal, Trial } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
 	StudentGoal.findAll({
         where: {
             user_id: req.session.user_id
@@ -31,7 +32,7 @@ router.get("/", (req, res) => {
 });
 
 //POST route for saving a new studentgoal
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
 	StudentGoal
 		.create({
 			student_id: req.body.student_id,
@@ -46,7 +47,7 @@ router.post("/", (req, res) => {
 });
 
 // PUT route for updating a studentGoal
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     StudentGoal.update(
       {
         goal_id: req.body.goal_id,
@@ -70,7 +71,7 @@ router.put('/:id', (req, res) => {
   });
 
 // DELETE route for deleting a studentGoal
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   StudentGoal.destroy({
     where: {
       id: req.params.id

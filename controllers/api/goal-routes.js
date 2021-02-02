@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Goal } = require("../../models");
+const withAuth = require("../../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Goal.findAll({
     where: {
       user_id: req.session.user_id,
@@ -12,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 //POST route for saving a goal
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Goal.create({
     name: req.body.name,
     description: req.body.description,
@@ -29,7 +30,7 @@ router.post("/", (req, res) => {
 });
 
 // PUT route for updating a goal
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
     Goal.update(
         {
           name: req.body.name,
@@ -56,7 +57,7 @@ router.put("/:id", (req, res) => {
   });
 
 // DELETE route for deleting a goal
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Goal.destroy({
     where: {
       id: req.params.id,

@@ -1,7 +1,7 @@
 const router = require("express").Router();
-// const withAuth = require("../utils/auth");
 const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
+const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
     if (req.session.loggedIn) {
@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   res.render("login");
 });
 
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", withAuth, (req, res) => {
   // User.findOne where id = req.session.user_id
   User.findOne({
     where: {

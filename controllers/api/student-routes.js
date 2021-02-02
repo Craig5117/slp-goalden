@@ -1,17 +1,16 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Student } = require("../../models");
-
-// const withAuth = require("../../utils/auth");
+const withAuth = require("../../utils/auth");
 
 //Student routes
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
 	Student.findAll({}).then((data) => res.json(data));
 });
 
 //POST route for saving a student
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
 	Student.create({
 		user_id: req.body.user_id,
 		first_name: req.body.first_name,
@@ -26,7 +25,7 @@ router.post("/", (req, res) => {
 });
 
 //DELETE route for deleting a student
-router.delete("/student", (req, res) => {
+router.delete("/student", withAuth, (req, res) => {
 	Student.destroy({
 		where: {
 			student: req.params.student,
@@ -37,7 +36,7 @@ router.delete("/student", (req, res) => {
 });
 
 //PUT route for updating a student
-router.put("/student", (req, res) => {
+router.put("/student", withAuth, (req, res) => {
 	Student.update(
 		{
 			user_id: req.body.user_id,
