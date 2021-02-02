@@ -1,3 +1,10 @@
+/* Color Bank:
+#516360
+#6d9387
+#cedbd8
+#edd8ca
+#d3c6b7 */
+
 header {
     color: #516360;
 }
@@ -9,13 +16,13 @@ h3 {
     font-weight: 300;
 }
 .input-field {
-    width: 20rem; 
+    width: 25rem; 
     text-align: center;
 }
-.row { 
+form { 
+    justify-content: flex-start;
     padding: 2rem;
-    width: 25rem;
-    flex-direction: column;
+    width: 30rem;
     /* border: 5rem;
     border-color: #516360; */
     background-color: #cedbd8;
