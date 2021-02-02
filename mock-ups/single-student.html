@@ -3,11 +3,11 @@
 
 
 <div>
-    <h2> {{name}} </h2>
-    <div class="goals-wrapper">
-        <div class="goal-container">
+    <div class="goals-wrapper" >
+        <h2 class="student-name" style="border: 3px #516360 solid;"> {{name}} </h2>
+        <div class="goal-container"  >
             {{#each student_goals as |goal|}}
-            <div>
+            <div class="input-field">
                 <h3> {{goal.goal_name}} </h3>
                 <p> {{goal.description}} </p>
                 <a href={{goal.id}}>Trial Data</a>
