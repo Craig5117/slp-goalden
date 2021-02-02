@@ -1,13 +1,24 @@
-.input-field {
-    width: 50rem;
+/* Color Bank:
+#516360
+#6d9387
+#cedbd8
+#edd8ca
+#d3c6b7 */
+
+div {
+    background-color: #edd8ca;
 }
-.trial-form {
-    width: 50%;
+h2 {
+    color: #516360;    
 }
-form {
-    border: 2rem;
-    border-color: #6d9387;
-}
+.btn {
+    background-color: #6d9387; 
+    border: none;
+    color: #cedbd8;
+    text-decoration: none;
+    
+} 
+
 /* * {
     background-color: blue;
 };   */
