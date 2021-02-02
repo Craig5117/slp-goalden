@@ -24,30 +24,48 @@ h4 {
     color: #516360;
     font-weight: 300;
 }
+a {
+    margin: 16px;
+}
 .input-field {
-    width: 25rem; 
+    width: 25%; 
     text-align: center;
     background-color: #cedbd8;
 }
+
+/* Single-Student */
 .wrapper {
-    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* height: 75%; */
     background-color: #cedbd8;
-
-
+    /* text-align: right; */
 }
-.student-name {
-    width: 25rem; 
+.goals-input {
+    width: 100%;
+    text-align: center;
+}
+.student-name-wrapper {
+    width: 100%; 
     text-align: center;
     background-color: #516360;
     color: #d3c6b7;
 }
-.goals-wrapper {
-    width: 25rem; 
-    text-align: center;
-    background-color: #cedbd8;
+.student-name {
+    color: #d3c6b7;
 }
-.goal-container {
-    display: flex-start;
+.goals-wrapper {
+    width: 100%; 
+    text-align: center;
+}
+.student-trials {
+    width: 100%;
+    text-align: center;
+}
+.wrapper a {
+    width: 20%;
+    text-align: center; 
 }
 form { 
     justify-content: flex-start;
