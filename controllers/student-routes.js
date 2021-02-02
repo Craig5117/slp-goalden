@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
 
 router.get("/", (req, res) => {
-    const userId = req.session.user_id;
+  const userId = req.session.user_id;
   Student.findAll({
     where: {
       // finds all students belonging to current user
@@ -24,10 +24,16 @@ router.get("/", (req, res) => {
       );
       // checks to see if data matches with current user
       if (students[0].user_id === userId) {
-          const username = students[0].user.username
-        res.render("all-students", { students, username, loggedIn: req.session.loggedIn });
+        const username = students[0].user.username;
+        res.render("all-students", {
+          students,
+          username,
+          loggedIn: req.session.loggedIn,
+        });
       } else {
-        res.status(401).render("unauthorized", {loggedIn: req.session.loggedIn});
+        res
+          .status(401)
+          .render("unauthorized", { loggedIn: req.session.loggedIn });
       }
     })
     .catch((err) => {
@@ -37,7 +43,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/student/:id", (req, res) => {
-    const userId = req.session.user_id;
+  const userId = req.session.user_id;
   StudentGoal.findAll({
     where: {
       student_id: req.params.id,
@@ -63,7 +69,12 @@ router.get("/student/:id", (req, res) => {
         studentGoal.get({ plain: true })
       );
       // check user id here
-      res.json(studentGoals);
+      //   console.log(studentGoals)
+      let studentName = studentGoals[0].student.last_name;
+      if (studentGoals[0].student.first_name) {
+        studentName += `, ${studentGoals[0].student.first_name}`;
+      }
+      res.render("single-student", { studentGoals, studentName });
     })
     .catch((err) => {
       console.log(err);
@@ -72,10 +83,62 @@ router.get("/student/:id", (req, res) => {
 });
 
 router.get("/submit/:number", (req, res) => {
-    const userId = req.session.user_id;
+  const userId = req.session.user_id;
   studNumber = req.params.number;
   // Gets user id from session to render into form data-userID attribute
-  res.render("student-submissions", { studNumber, userId, loggedIn: req.session.loggedIn });
+  res.render("student-submissions", {
+    studNumber,
+    userId,
+    loggedIn: req.session.loggedIn,
+  });
+});
+
+router.get("/trial-submit/:id", (req, res) => {
+  StudentGoal.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "user_id", "student_id"],
+    include: [
+      {
+        model: Student,
+        attributes: ["last_name", "first_name"],
+      },
+      {
+        model: Goal,
+        attributes: ["name", "description"],
+      },
+    ],
+  })
+    .then((studentGoalData) => {
+      studentGoalData.get({ plain: true });
+      let studentName = studentGoalData.student.last_name;
+      if (studentGoalData.student.first_name) {
+        studentName += `, ${studentGoalData.student.first_name}`;
+      }
+      const goalName = studentGoalData.goal.name;
+      const goalDesc = studentGoalData.goal.description;
+      const userId = studentGoalData.user_id;
+      const studentId = studentGoalData.student_id;
+      if (userId === req.session.user_id) {
+        res.render("trial-submission", {
+          loggedIn: req.session.loggedIn,
+          userId,
+          studentName,
+          goalName,
+          goalDesc,
+          studentId
+        });
+      } else {
+        res
+          .status(401)
+          .render("unauthorized", { loggedIn: req.session.loggedIn });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

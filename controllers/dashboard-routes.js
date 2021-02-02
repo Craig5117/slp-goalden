@@ -31,8 +31,4 @@ router.get("/dashboard", (req, res) => {
   
 });
 
-router.get("/trial-submit/:id", (req, res) => {
-  res.render("trial-submission", {loggedIn: req.session.loggedIn});
-});
-
 module.exports = router;

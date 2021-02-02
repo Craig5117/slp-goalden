@@ -1,21 +1,21 @@
 <div>
     <div class="goals-wrapper" >
-        <h2 class="student-name" style="border: 3px #516360 solid;"> {{name}} </h2>
+        <h2 class="student-name" style="border: 3px #516360 solid;"> {{studentName}} </h2>
         <div class="goal-container"  >
-            {{#each student_goals as |goal|}}
+            {{#each studentGoals as |studentGoal|}}
             <div class="input-field">
-                <h3> {{goal.goal_name}} </h3>
-                <p> {{goal.description}} </p>
-                <a href={{goal.id}}>Trial Data</a>
+                <h3> {{studentGoal.goal.name}} </h3>
+                <p> {{studentGoal.goal.description}} </p>
+                <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial Data</a>
                 
                 <div>
-                {{#each goal.trials as |trial|}}
+                {{#each studentGoal.trials as |trial|}}
                     <h4> Date of Trials </h4>
                     <p> {{trial.date}} </p>
                     <h4> Successful Trials </h4>
                     <div>
-                        <p> {{successful}} </p>
-                        <p> {{percent}} </p>
+                        <p> {{trial.successful}} </p>
+                        <p> {{trial.percent}} </p>
                     </div>
                 {{/each}}
                 </div>       

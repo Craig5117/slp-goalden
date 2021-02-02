@@ -8,23 +8,24 @@ async function goalSubmitHandler(event) {
     // this needs a fetch Get to studentGoal.
     // If studentGoal.user_id = req.sessions.user_id,
     // const studentId = studentGoal.student_id (for the link back to single student)
+    // actually that can be done when it is rendered
     if (goalName && goalDesc) {
         
-        //       const response = await fetch(`/api/goals`, {
-        //         method: "POST",
-        //         body: JSON.stringify({
-        //           name: goalName,
-        //           description: goalDesc,
-        //         }),
-        //         headers: {
-        //           "Content-Type": "application/json",
-        //         },
-        //       });
-        //       if (response.ok) {
-        //         document.location.replace(`/goals`);
-        //       } else {
-        //         alert(response.statusText);
-        //       }
+              const response = await fetch(`/api/goals`, {
+                method: "POST",
+                body: JSON.stringify({
+                  name: goalName,
+                  description: goalDesc,
+                }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+              if (response.ok) {
+                document.location.replace(`/goals`);
+              } else {
+                alert(response.statusText);
+              }
       }
     
   }
