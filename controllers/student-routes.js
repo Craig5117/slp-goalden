@@ -75,7 +75,7 @@ router.get("/student/:id", (req, res) => {
       if (studentGoals[0].student.first_name) {
         studentName += `, ${studentGoals[0].student.first_name}`;
       }
-      res.render("single-student", { studentGoals, studentName, studentId });
+      res.render("single-student", { studentGoals, studentName, studentId, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -143,8 +143,52 @@ router.get("/trial-submit/:id", (req, res) => {
 });
 
 router.get('/add-studentgoal/:id', (req, res) => {
-    res.render("add-studentgoal")
-});   
+    const userId = req.session.user_id;
+    const username = req.session.username;
+    let studentName;
+    (async function () {
+       await Student.findOne({
+            where: {
+                id: req.params.id
+            },
+            attributes: [
+                "last_name",
+                "first_name"
+            ]
+        })
+        
+        .then((studentData) => {
+            studentData.get({ plain: true })
+            studentName = studentData.last_name;
+            if (studentData.first_name) {
+                studentName += `, ${studentData.first_name}`
+            }
+        });
+       await Goal.findAll({
+            where: {
+                // this needs to be changed to req.session.user_id
+                user_id: userId,
+            },
+            attributes: [
+                "id",
+                "name",
+                "description",
+            ]
+        })
+        .then((goalData) => {
+            const userGoals = goalData.map((userGoal) => 
+            userGoal.get({ plain: true })
+            );
+            res.render("add-studentgoal", { userId, userGoals, username, studentName, loggedIn: req.session.loggedIn })
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    })();
+});
+   
+
 
 
 module.exports = router;

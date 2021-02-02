@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
     const userId = req.session.user_id;
     Goal.findAll({
         where: {
-            // this needs to be changed to req.session.user_id
+            // targets only goals relevant to current user
             user_id: userId,
         },
         attributes: [
@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
 
 router.get('/submit', (req, res) => {
     const userId = req.session.user_id;
-    res.render('goal-submission', {userId})
+    res.render('goal-submission', {userId, loggedIn: req.session.loggedIn})
 });
 
 // option to add single goal route here
