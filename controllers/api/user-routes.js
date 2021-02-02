@@ -41,18 +41,17 @@ router.post("/login", (req, res) => {
       },
     }).then((dbUserData) => {
       if (!dbUserData) {
-        res.status(400).json({ message: "No user found with that username." });
+        res.status(400).json({ message: "No user found with that email address." });
         return;
       }
   
     //   // user verification
-    //   const validPassword = dbUserData.checkPassword(req.body.password);
-    //   if (!validPassword) {
-    //     res
-    //       .status(400)
-    //       .json({ message: "Password does not match with username." });
-    //     return;
-    //   }
+    const validPassword = dbUserData.checkPassword(req.body.password);
+       if (!validPassword) {
+         res.status(400).json({ message: "Password does not match with email address." });
+       return;
+       }
+       
       req.session.save(() => {
         // sets session variables to confirm user is logged in
         req.session.user_id = dbUserData.id;
