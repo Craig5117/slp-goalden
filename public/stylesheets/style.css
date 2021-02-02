@@ -5,12 +5,21 @@ h2 {
 .input-field {
     width: 50rem;
 }
-.trial-form {
-    width: 50%;
+h3 {
+    color: #516360;
+    font-weight: 300;
 }
-form {
-    border: 2rem;
-    border-color: #6d9387;
+.input-field {
+    width: 25rem; 
+    text-align: center;
+}
+form { 
+    justify-content: flex-start;
+    padding: 2rem;
+    width: 30rem;
+    /* border: 5rem;
+    border-color: #516360; */
+    background-color: #cedbd8;
 }
 .modal-input{
     padding: 0 3em;
