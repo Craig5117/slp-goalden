@@ -24,14 +24,8 @@ h4 {
     color: #516360;
     font-weight: 300;
 }
-a {
-    margin: 16px;
-}
-.input-field {
-    width: 25%; 
-    text-align: center;
-    background-color: #cedbd8;
-}
+
+
 
 /* Single-Student */
 .wrapper {
@@ -67,13 +61,60 @@ a {
     width: 20%;
     text-align: center; 
 }
+a {
+    margin: 16px;
+}
+
+/* Trial Submission Form */
+.container {
+    display: flex;  
+    padding: 0%;
+    margin: 5%;
+    width: 50%;
+}
+.student-id-trial {
+    justify-content: flex-start;
+    color: #d3c6b7;
+    width: 60%;
+    text-align: left;
+}
+.student-id-trial h3 {
+    background-color: #516360;
+    color: #d3c6b7;
+    margin-top: 0cm;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
+.row {
+    margin-right: 0cm;
+    margin-bottom: 0cm;
+    margin-top: 0cm;
+}
+.row h4 {
+    background-color: #516360;
+    color: #d3c6b7;
+    width: 100%;
+}
+.trial-header {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-top: 0cm;
+}
+.trial-input {
+    width: 90%; 
+    text-align: left;
+    background-color: #cedbd8;
+    padding-left: 2rem;
+}
 form { 
     justify-content: flex-start;
-    padding: 2rem;
-    width: 30rem;
-    /* border: 5rem;
-    border-color: #516360; */
+    width: 40%;
     background-color: #cedbd8;
+    margin-right: 0%;
+}
+button {
+    margin: 16px;
 }
 .modal-input{
     padding: 0 3em;
