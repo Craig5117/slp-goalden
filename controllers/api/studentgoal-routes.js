@@ -45,6 +45,30 @@ router.post("/", (req, res) => {
       });
 });
 
+// PUT route for updating a studentGoal
+router.put('/:id', (req, res) => {
+    StudentGoal.update(
+      {
+        goal_id: req.body.goal_id,
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    ).then((studentGoalData) => {
+      if (!studentGoalData) {
+          res.status(404).json({ message: "No student goal found with this id" });
+          return;
+        }
+        res.json(studentGoalData);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
 // DELETE route for deleting a studentGoal
 router.delete('/:id', (req, res) => {
   StudentGoal.destroy({
@@ -52,30 +76,6 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   }).then((studentGoalData) => {
-    if (!studentGoalData) {
-        res.status(404).json({ message: "No student goal found with this id" });
-        return;
-      }
-      res.json(studentGoalData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-// PUT route for updating a studentGoal
-router.put('/:id', (req, res) => {
-  StudentGoal.update(
-    {
-      goal_id: req.body.goal_id,
-    },
-    {
-      where: {
-        id: req.params.id
-      }
-    }
-  ).then((studentGoalData) => {
     if (!studentGoalData) {
         res.status(404).json({ message: "No student goal found with this id" });
         return;

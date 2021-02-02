@@ -2,54 +2,80 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Trial } = require("../../models");
 
-router.get("/trial", (req, res) => {
-	Trial.findAll({}).then((data) => res.json(data));
+router.get("/:id", (req, res) => {
+  Trial.findAll({
+    where: {
+      student_goal_id: req.params.id,
+    },
+  })
+    .then((dbTrialData) => res.json(dbTrialData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 //POST route for saving a new trial
-router.post("/trial", (req, res) => {
-	Trial
-		.create({
-			date: req.body.date,
-            successful: req.body.successful,
-            percent: req.body.percent,
-            student_goal_id: req.body.student_goal_id,
-            user_id: req.body.user_id,
-		})
-		.then((data) => {
-			res.send("trial creator");
-		});
-});
-
-// DELETE route for deleting a trial
-router.delete('/trial', (req, res) => {
-  user.destroy({
-    where: {
-      trial: req.params.user
-    }
-  }).then((trial) => {
-    res.delete(trial);
-  });
+router.post("/", (req, res) => {
+  Trial.create({
+    date: req.body.date,
+    successful: req.body.successful,
+    percent: req.body.percent,
+    student_goal_id: req.body.student_goal_id,
+    user_id: req.body.user_id,
+  })
+    .then((dbTrialData) => res.json(dbTrialData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // PUT route for updating a trial
-router.put('/trial', (req, res) => {
-  trial.update(
+router.put("/trial", (req, res) => {
+  Trial.update(
     {
       date: req.body.date,
       successful: req.body.successful,
       percent: req.body.percent,
-      student_goal_id: req.body.student_goal_id,
-      user_id: req.body.user_id,
     },
     {
       where: {
-        trial: req.params.user
-      }
+        id: req.params.id,
+      },
     }
-  ).then((trial) => {
-    res.update(trial);
-  });
+  )
+    .then((trial) => {
+      if (!dbTrialData) {
+        res.status(404).json({ message: "No student goal found with this id" });
+        return;
+      }
+      res.json(dbTrialData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// DELETE route for deleting a trial
+router.delete("/:id", (req, res) => {
+  Trial.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbTrialData) => {
+      if (!dbTrialData) {
+        res.status(404).json({ message: "No student goal found with this id" });
+        return;
+      }
+      res.json(dbTrialData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
