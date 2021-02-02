@@ -1,3 +1,32 @@
+/* Color Bank:
+#516360
+#6d9387
+#cedbd8
+#edd8ca
+#d3c6b7 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+body {
+    background-color: #edd8ca;
+}
+header {
+    padding: 60px;
+    background: #cedbd8;
+    font-size: 30px;
+}
+
+h1 {
+    color: #516360;
+    font-weight: 300;
+
+}
+
+
 /* .input-field {
     width: 15rem;
 } */
