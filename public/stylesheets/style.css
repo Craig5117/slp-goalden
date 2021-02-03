@@ -5,6 +5,11 @@
 #edd8ca
 #d3c6b7 */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 label {
     width: 90%;
     padding-left: 2rem;
@@ -18,11 +23,25 @@ label {
 
 header {
     color: #516360;
+    background-color: #516360;
 }
 body {
     background-color: #edd8ca;
 }
-
+.logo {
+    font-size: 5rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    border-top: solid 1px #516360;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to bottom right, #CDB153, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
 h2 {
     color: #516360;
 }
@@ -40,8 +59,10 @@ h4 {
 .sticky-footer {
     position: fixed;
     width: 100%;
-    margin: 5rem;
     box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
+    left: 0;
+    bottom: 0;
+    text-align: center;
 }
 
 /* Single-Student */
