@@ -1,20 +1,22 @@
 <!-- We can use a custom helper to make as many of these as the 
 user wants. -->
 
-<div>
-    <div>
+<div class="container">
+    <div class="container-form">
         <form id="stud-submit" data-userID="{{userId}}">
             <ol>
             {{#times studNumber}}
             <li>
-            <label for="last_name">Last Name or Alternate Identifier</label>
+            <label for="last_name">Last name or alternate identifier</label>
             <input type="text" name="last_name"/>
             <label for="first_name">First Name</label>
             <input type="text" name="first_name"/>
             </li>
             {{/times}}
             </ol>
-            <button type="submit">Submit</button>
+             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right"></i>
+            </button>   
         </form>
     </div>
 </div>

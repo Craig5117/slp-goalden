@@ -1,48 +1,68 @@
 <div>
-    <div class="row">
-        <h2>Login</h2>
-        <form class="col s6" id="login-form">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input type="email" name="email_login" id="email_login" class="validate" />
-                    <label for="email_login" class="">Email</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <label for="password_login">Password</label>
-                    <input type="text" name="password_login" id="password_login" />
-                </div>
-            </div>
-            <button type="submit" class="btn waves-effect waves-light">Log In</button>
-        </form>
+    <div class="container">
+        <div class="container-form">
+            
+            <form id="login-form">
+                <h4 class="input-header">Login</h4>
+                    <div class="input-field">
+                        <input type="email" name="email_login" id="email_login" class="validate" />
+                        <label for="email_login" class="email-input">Email</label>
+                    </div>
+                
+                
+                    <div class="input-field">
+                        <label for="password_login">Password</label>
+                        <input type="password" name="password_login" id="password_login" />
+                    </div>
+              
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+
+        <div class="container-form">
+            
+            <form id="signup-form">
+                <h4 class="input-header">Sign-Up</h4>
+                    <div class="input-field">
+                        <label for="username_signup" class="">Username</label>
+                        <input type="text" name="username_signup" id="username_signup" />
+                    </div>
+            
+                
+                    <div class="input-field">
+                        <label htmlFor="id" for="email_signup" class="">Email</label>
+                        <input type="email" name="email_signup" id="email_signup" />
+                    </div>
+               
+                    <div class="input-field">
+                        <label htmlFor="id" for="password_signup">Password</label>
+                        <input type="text" name="password_signup" id="password_signup" />
+                    </div>
+               
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
     </div>
 
-    <div>
-        <h2>Sign-Up</h2>
-        <form id="signup-form">
-            <div class="row">
-                <div class="input-field col s6">
-                    <label for="username_signup" class="">Username</label>
-                    <input type="text" name="username_signup" id="username_signup" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <label htmlFor="id" for="email_signup" class="">Email</label>
-                    <input type="email" name="email_signup" id="email_signup" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <label htmlFor="id" for="password_signup">Password</label>
-                    <input type="text" name="password_signup" id="password_signup" />
-                </div>
-            </div>
-            <button type="submit" class="btn waves-effect waves-light">Sign-Up</button>
-        </form>
-    </div>
-</div>
+    <!-- Modal Trigger -->
+    <button data-target="modal1" class="btn modal-trigger">Instructions</button>
 
-<script src="/javascript/login.js"></script>
-<script src="/javascript/sign-up.js"></script>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Login/Sign-Up</h4>
+            <p> - If you are already a user, sign in with your username and password.<br /> - To create a new account,
+                enter a username, a unique email, and password that is at least 8 characters in length.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="btn modal-close waves-effect waves-green btn-flat">Thanks!</a>
+        </div>
+    </div>
+
+
+    <script src="/javascript/login.js"></script>
+    <script src="/javascript/sign-up.js"></script>
