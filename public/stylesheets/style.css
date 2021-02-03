@@ -122,3 +122,33 @@ button {
 .modal-input label {
     padding-left: 3em;
 }
+
+/* All Goals View */
+.all-goals-container {
+    margin: 2rem;
+
+}
+table {
+    flex-direction: row;
+    background-color: #cedbd8;
+    /* justify-content: flex-start; */
+    /* flex-direction: column; */
+    /* padding: 2rem; */
+    /* margin: 2rem; */
+    /* margin-left: 2rem;
+    margin-right: 2rem; */
+}
+/* thead {
+    justify-content: space-between;
+} 
+tbody {
+    width: 100%;
+    margin: 2rem;
+} */
+tr {
+    justify-content: space-between;
+}
+.footer-goal {
+    /* flex-shrink: 0; */
+    position: fixed;
+}
