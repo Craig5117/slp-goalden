@@ -1,7 +1,36 @@
 .marquee {
+    background-color: rgb(142, 155, 142);
     text-align:center;
     font-size: 31px;
-    padding: 20px 0;
+    padding: 7px 0;
+    font-family: "Amatic SC";
+    font-size: 48px;
+}
+
+.main {
+    background-color:rgb(192, 191, 191);
+    padding: 35px 0 0 0;
+    height: 780px;
+}
+
+.input-1 {
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.input-2 {
+    background-color: white;
+    border-radius:0 0 5px 5px;
+}
+
+.student-input {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.goal-input {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .container {
@@ -12,9 +41,25 @@
 .container-form {
     margin: auto;
     width: 50%;
-    padding: 10px;
+    padding: 0 25px;
 }
 
-h4 {
+h5 {
     text-align: center;
 }
+
+.button-style {
+    padding: 70px 0 0px 0;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(142, 155, 142);
+    margin: 0px 0 0px 0;
+    padding: 10px;
+    text-align: center;
+}
+
