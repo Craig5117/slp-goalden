@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/materialize.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <title>SLP Goalden</title>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1 class="center-align">SLP Goalden</h1>
+            {{#if loggedIn}}
+            <nav>
+            <a href="/dashboard" class="btn waves-effect waves-light">
+                   Dashboard
+            </a>
+            <a href="" id="logout" class="btn waves-effect waves-light">
+                    Log Out
+            </a>
+            </nav>
+            {{/if}}
+        </header>
+        {{#unless loggedIn}}
+        <div>
+            <p>SLP Goalden is a web application that helps you conveniently store student goals and trial data. Log in or sign-up to get started.</p>
+        </div>
+        {{/unless}}
+        <main>
+            {{{ body }}}
+        </main>
+    </div>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <footer class="new-post-footer sticky-footer">
+        <button id="new-post-btn">+ Student</button>
+        <i class="material-icons center"></i>
+    </footer>
+</body>
+
+</html>
+
