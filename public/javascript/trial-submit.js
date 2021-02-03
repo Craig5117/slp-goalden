@@ -25,27 +25,36 @@ async function trialSubmitHandler(event) {
     );
   } else {
     if (trialDate && trialsAttempted && trialsSucceeded) {
+      const userId = document
+    .getElementById("trial-form")
+    .getAttribute("data-userID");
+      const studentId = document
+    .getElementById("student-name")
+    .getAttribute("data-studentID");
+
+
       const scoreRatio = `${trialsSucceeded}/${trialsAttempted}`;
       const scorePercent =
         ((trialsSucceeded / trialsAttempted) * 100).toFixed(2) + "%";
       console.log(trialDate, scoreRatio, scorePercent, studentGoalId);
-      //       const response = await fetch(`/api/trials`, {
-      //         method: "POST",
-      //         body: JSON.stringify({
-      //           date: trialDate,
-      //           successful: scoreRatio,
-      //           percent: scorePercent,
-      //           student_goal_id: studentGoalId,
-      //         }),
-      //         headers: {
-      //           "Content-Type": "application/json",
-      //         },
-      //       });
-      //       if (response.ok) {
-      //         document.location.replace(`/student${studentId}`);
-      //       } else {
-      //         alert(response.statusText);
-      //       }
+            const response = await fetch(`/api/trials`, {
+              method: "POST",
+              body: JSON.stringify({
+                date: trialDate,
+                successful: scoreRatio,
+                percent: scorePercent,
+                student_goal_id: studentGoalId,
+                user_id: parseInt(userId)
+              }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+            if (response.ok) {
+              document.location.replace(`/students/student/${studentId}`);
+            } else {
+              alert(response.statusText);
+            }
     }
   }
 }

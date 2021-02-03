@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div>
     <div>
         <form>
@@ -8,3 +9,27 @@
         </form>
     </div>
 </div>
+=======
+<!-- We can use a custom helper to make as many of these as the 
+user wants. -->
+
+<div>
+    <div>
+        <form id="stud-submit" data-userID="{{userId}}">
+            <ol>
+            {{#times studNumber}}
+            <li>
+            <label for="last_name">Last Name or Alternate Identifier</label>
+            <input type="text" name="last_name"/>
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name"/>
+            </li>
+            {{/times}}
+            </ol>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script src="/javascript/student-submit.js"></script>
+>>>>>>> 1bde460d38173b9fb33943cc9332683b4e6f79cb
