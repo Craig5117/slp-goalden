@@ -44,6 +44,7 @@ async function studentSubmitHandler(event) {
         });
         if (response.ok) {
          console.log("Ok");
+         await document.location.replace('/students');
         } else {
           alert(response.statusText);
         }
@@ -60,12 +61,10 @@ async function studentSubmitHandler(event) {
           //   console.log(JSON.stringify(payload));
         }
       }
-        await document.location.replace('/students');
+        
     }
     await getStudentPostArr();
-    await multiPost(postArr);
-    
-    
+    await multiPost(postArr);    
   }
   
   document
