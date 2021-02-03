@@ -14,6 +14,11 @@
     "start": "node server.js",
     "seed": "node db/seeds/index.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick"
+    }
+  },
   "name": "speech-goal-bank",
   "description": "",
   "version": "1.0.0",

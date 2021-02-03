@@ -5,6 +5,7 @@
 #edd8ca
 #d3c6b7 */
 
+<<<<<<< HEAD
 header {
     color: #516360;
 }
@@ -122,3 +123,22 @@ button {
 .modal-input label {
     padding-left: 3em;
 }
+=======
+div {
+    background-color: #edd8ca;
+}
+h2 {
+    color: #516360;    
+}
+.btn {
+    background-color: #6d9387; 
+    border: none;
+    color: #cedbd8;
+    text-decoration: none;
+    
+} 
+
+/* * {
+    background-color: blue;
+};   */
+>>>>>>> feature/create-dashboard
