@@ -24,7 +24,12 @@ h4 {
     color: #516360;
     font-weight: 300;
 }
-
+.btn {
+    background-color: #6d9387; 
+    border: none;
+    color: #cedbd8;
+    text-decoration: none;
+} 
 
 
 /* Single-Student */
@@ -123,32 +128,7 @@ button {
     padding-left: 3em;
 }
 
-/* All Goals View */
-.all-goals-container {
-    margin: 2rem;
 
-}
-table {
-    flex-direction: row;
-    background-color: #cedbd8;
-    /* justify-content: flex-start; */
-    /* flex-direction: column; */
-    /* padding: 2rem; */
-    /* margin: 2rem; */
-    /* margin-left: 2rem;
-    margin-right: 2rem; */
-}
-/* thead {
-    justify-content: space-between;
-} 
-tbody {
-    width: 100%;
-    margin: 2rem;
+/* div {
+    background-color: #edd8ca;
 } */
-tr {
-    justify-content: space-between;
-}
-.footer-goal {
-    /* flex-shrink: 0; */
-    position: fixed;
-}
