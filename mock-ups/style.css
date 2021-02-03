@@ -33,6 +33,7 @@ h4 {
 }
 
 
+
 /* Single-Student */
 .wrapper {
     display: flex;
@@ -123,6 +124,7 @@ a {
 }
 form { 
     justify-content: flex-start;
+    width: 40%;
     background-color: #cedbd8;
     margin-right: 0%;
 }
