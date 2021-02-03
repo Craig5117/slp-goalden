@@ -13,14 +13,30 @@ label {
 .marquee {
     text-align:center;
     font-size: 31px;
-    padding: 20px 0;
+    
 }
 
 header {
     color: #516360;
+    background-color: #516360;
 }
 body {
     background-color: #edd8ca;
+}
+
+.logo {
+    font-size: 5rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    border-top: solid 1px #516360;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to bottom right, #cdb153, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }
 
 h2 {
