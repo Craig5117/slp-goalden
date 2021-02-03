@@ -33,6 +33,22 @@ h4 {
 
 
 /* Single-Student */
+.sing-student-container {
+    /* display: flex; */
+    padding: 2rem;
+}
+table {
+    background-color: #cedbd8;
+}
+.footer-sing-student {
+    position: fixed;
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: #516360 solid;
+    width: 100%;
+    text-align: center;
+}
 .wrapper {
     display: flex;
     flex-direction: column;

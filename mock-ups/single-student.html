@@ -1,8 +1,51 @@
 <link rel="stylesheet" href="../public/stylesheets/materialize.css">
 <link rel="stylesheet" href="../public/stylesheets/style.css">
 
+<div class="sing-student-container">
+    <h4>
+        {{username}}
+    </h4>
+    <div>
+    {{#each studentGoals as |studentGoal|}}
+        <table class="striped" style="border: 3px #516360 solid;">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Goal</th>
+                    <th>Goal Description</th>
+                    <th>Trial Date</th>
+                    <th>Successful Trials (successful & percentage)</th>
+                </tr>
+            </thead>
 
-<div class="wrapper" style="border: 3px #516360 solid;">
+            <tbody>
+                <tr>
+                    <td>{{studentName}}</td>
+                    <td>{{studentGoal.goal.name}}</td>
+                    <td>{{studentGoal.goal.description}}</td>
+                    <div>
+                    {{#each studentGoal.trials as |trial|}}
+                        <td>{{trial.date}}</td>
+                        <td>{{trial.successful}} {{trial.percent}}</td>
+                    </div>
+                    {{/each}}
+                </tr>
+            </tbody>
+        </table>
+    {{/each}}
+    </div>
+</div>
+
+<footer class="footer-sing-student">
+    <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to
+        Student</a>
+    <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial Data</a>
+</footer>
+
+
+
+
+<!-- <div class="wrapper" style="border: 3px #516360 solid;">
     <div class="student-name-wrapper">
         <h2 class="student-name" style="border: 3px #516360 solid;"> {{studentName}} </h2>
     </div>
@@ -33,7 +76,7 @@
     </div>  
 {{/each}}
 </div>
-
+ -->
 <!-- </div>
 
 </div>
