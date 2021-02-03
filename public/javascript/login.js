@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, "dismissible");
+})
+
 async function loginFormHandler(event) {
     event.preventDefault();
 
