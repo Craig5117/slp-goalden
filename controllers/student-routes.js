@@ -70,7 +70,8 @@ router.get("/student/:id", withAuth, (req, res) => {
       );
       // check user id here
       //   console.log(studentGoals)
-      const studentId = studentGoals[0].student_id
+      // replace student name and id with Student db call
+      const studentId = req.params.id;
 ;      let studentName = studentGoals[0].student.last_name;
       if (studentGoals[0].student.first_name) {
         studentName += `, ${studentGoals[0].student.first_name}`;

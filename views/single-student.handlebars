@@ -3,64 +3,36 @@
         <h2 class="student-name" style="border: 3px #516360 solid;"> {{studentName}} </h2>
     </div>
 
-    <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to
-        Student</a>
-
+    <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to Student</a>
+    {{!-- {{#if studentGoals }} --}}
     <div class="goals-wrapper">
         {{#each studentGoals as |studentGoal|}}
         <div class="goals-input">
             <h4> {{studentGoal.goal.name}} </h4>
             <p> {{studentGoal.goal.description}} </p>
         </div>
-    </div>
+    
 
-    <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial Data</a>
+        <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial Data</a>
 
-    <div class="student-trials">
-        {{#each studentGoal.trials as |trial|}}
-        <h4> Date of Trials </h4>
-        <p> {{trial.date}} </p>
-        <h4> Successful Trials </h4>
-        <div>
-            <p> {{trial.successful}} </p>
-            <p> {{trial.percent}} </p>
-        </div>
-        {{/each}}
-    </div>
-    {{/each}}
-</div>
-
-{{!-- <div>
-    <div>
-        <h2 class="student-name" style="border: 3px #516360 solid;"> {{studentName}} </h2>
-        <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to
-            Student</a>
-    </div>
-    <div class="goals-wrapper">
-        <div class="goal-container">
-            {{#each studentGoals as |studentGoal|}}
-            <div class="input-field">
-                <h3> {{studentGoal.goal.name}} </h3>
-                <p> {{studentGoal.goal.description}} </p>
-                <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial
-                    Data</a>
-
-                <div>
-                    {{#each studentGoal.trials as |trial|}}
-                    <h4> Date of Trials </h4>
-                    <p> {{trial.date}} </p>
-                    <h4> Successful Trials </h4>
-                    <div>
-                        <p> {{trial.successful}} </p>
-                        <p> {{trial.percent}} </p>
-                    </div>
-                    {{/each}}
-                </div>
+        <div class="student-trials">
+            {{#each studentGoal.trials as |trial|}}
+            <h4> Date of Trials </h4>
+            <p> {{trial.date}} </p>
+            <h4> Successful Trials </h4>
+            <div>
+                <p> {{trial.successful}} </p>
+                <p> {{trial.percent}} </p>
             </div>
             {{/each}}
         </div>
+        {{/each}}
     </div>
-</div> --}}
+    {{!-- {{else}}
+    <p>This student has no goals yet.</p>
+    {{/if}} --}}
+</div>
+
 
 
 
