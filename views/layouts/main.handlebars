@@ -15,7 +15,7 @@
 <body>
     <div>
         <header>
-            <h1>SLP Goalden</h1>
+            <h1 class="center-align">SLP Goalden</h1>
             {{#if loggedIn}}
             <nav>
             <a href="/dashboard" class="btn waves-effect waves-light">
@@ -35,6 +35,10 @@
         <main>
             {{{ body }}}
         </main>
+        <footer class="new-post-footer sticky-footer">
+        <button id="new-post-btn">+ Student</button>
+        <i class="material-icons center"></i>
+    </footer>
     </div>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>

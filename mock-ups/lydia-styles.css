@@ -5,17 +5,6 @@
 #edd8ca
 #d3c6b7 */
 
-label {
-    width: 90%;
-    padding-left: 2rem;
-}
-
-.marquee {
-    text-align:center;
-    font-size: 31px;
-    padding: 20px 0;
-}
-
 header {
     color: #516360;
 }
@@ -34,15 +23,14 @@ h3 {
 h4 {
     color: #516360;
     font-weight: 300;
-    text-align: center;
 }
-
 .sticky-footer {
     position: fixed;
     width: 100%;
     margin: 5rem;
     box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
 }
+
 
 /* Single-Student */
 .wrapper {
@@ -88,15 +76,7 @@ a {
     padding: 0%;
     margin: 5%;
     width: 50%;
-    flex-direction: column;
 }
-
-.container-form {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
-
 .student-id-trial {
     justify-content: flex-start;
     color: #d3c6b7;
@@ -120,25 +100,24 @@ a {
     color: #d3c6b7;
     width: 100%;
 }
-.input-header {
+.trial-header {
     width: 100%;
     text-align: center;
     padding-bottom: 2rem;
     margin-top: 0cm;
 }
-.input-field {
+.trial-input {
     width: 90%; 
     text-align: left;
     background-color: #cedbd8;
     padding-left: 2rem;
 }
-
 form { 
     justify-content: flex-start;
+    width: 40%;
     background-color: #cedbd8;
     margin-right: 0%;
 }
-
 button {
     margin: 16px;
 }

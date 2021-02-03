@@ -1,0 +1,41 @@
+<div>
+    <h2>
+      {{username}}
+    </h2>
+    <ul>
+      {{#each students as |student|}}
+      <li>
+        <a href="/students/student/{{student.id}}">
+          <h3>
+            {{student.last_name}}{{#if student.first_name}}, {{student.first_name}}{{/if}}
+          </h3>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  <footer>
+    <p>SLP Goalden &copy; 2021</p>
+    <a class="waves-effect waves-light btn modal-trigger" href="#add-student-modal">+ Student</a>
+  </footer>
+  
+  <!-- Modal Structure -->
+  <div id="add-student-modal" class="modal">
+    <div class="modal-content">
+      <h4>How many students would you like to add?</h4>
+      <p>Please enter a number between 1-30</p>
+    </div>
+    <div class="input-field modal-input">
+      <label for="stud-number">Number of students</label>
+      <input type="number" name="stud-number" id="stud-number">
+    </div>
+    <div class="modal-input">
+      <button class="btn waves-effect waves-light" id="number-confirm">
+        Accept
+      </button>
+    </div>
+  </div>
+  
+  <script src="/javascript/all-students.js"></script>
+  
+  
