@@ -23,7 +23,7 @@ The page is functional, responsive, simple, clean, and easy to use and undertand
 
 <strong> Contributors</strong>
 Craig Bennett, Adam Crandall, Ethan Dodgan, Jessica, Jenson, Lydia Kennedy, and Sylvester Nwizu.
-If you have any question, please email us at nwizutoks@gmail.com, (please enter your email addresses)
+If you have any question, please email us at nwizutoks@gmail.com, lydiakennedy2@gmail.com, adamcrandall91@gmail.com, Jrjensen14@gmail.com, thefivalco@gmail.com, 
 <strong> Resources used</strong>
 ***************
 
