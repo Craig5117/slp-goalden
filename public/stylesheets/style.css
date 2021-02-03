@@ -1,13 +1,26 @@
-.input-field {
-    width: 50rem;
+.marquee {
+    text-align:center;
+    font-size: 30px;
+    padding: 20px 0;
+    font-style: Bebas Neue;
 }
-.trial-form {
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form {
+    margin: auto;
     width: 50%;
+    padding: 10px;
 }
-form {
-    border: 2rem;
-    border-color: #6d9387;
+
+h3 {
+    text-align: center;
 }
-/* * {
-    background-color: blue;
-};   */
+
+
+
+
+
