@@ -6,11 +6,13 @@
         {{username}}
     </h4>
     <div>
-    {{#each studentGoals as |studentGoal|}}
+        <h4>Student Name: {{studentName}}</h4>
+
+        {{#each studentGoals as |studentGoal|}}
         <table class="striped" style="border: 3px #516360 solid;">
             <thead>
                 <tr>
-                    <th>Student Name</th>
+                    <!-- <th>Student Name</th> -->
                     <th>Goal</th>
                     <th>Goal Description</th>
                     <th>Trial Date</th>
@@ -20,11 +22,11 @@
 
             <tbody>
                 <tr>
-                    <td>{{studentName}}</td>
+                    <!-- <td>{{studentName}}</td> -->
                     <td>{{studentGoal.goal.name}}</td>
                     <td>{{studentGoal.goal.description}}</td>
                     <div>
-                    {{#each studentGoal.trials as |trial|}}
+                        {{#each studentGoal.trials as |trial|}}
                         <td>{{trial.date}}</td>
                         <td>{{trial.successful}} {{trial.percent}}</td>
                     </div>
@@ -32,9 +34,10 @@
                 </tr>
             </tbody>
         </table>
-    {{/each}}
+        {{/each}}
     </div>
 </div>
+
 
 <footer class="footer-sing-student">
     <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to

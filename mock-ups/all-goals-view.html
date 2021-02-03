@@ -2,79 +2,57 @@
 <link rel="stylesheet" href="../public/stylesheets/style.css">
 
 <div class="all-goals-container">
-    <h4>
-        {{username}}
-    </h4>
+  <h3 class="left">
+    Username:{{username}}
+  </h3>
+  <div>
+  
+    {{#each studentGoals as |studentGoal|}}
+    <table class="striped responsive-table" style="border: 3px #516360 solid;">
+      <thead>
+        <tr>
+          <th>Goal</th>
+          <th>Goal Description</th>
+        </tr>
+      </thead>
 
-    <table class="striped" style="border: 3px #516360 solid;">
-        <thead>
-            <tr>
-                <th>Student Name</th>
-                <th>Goal</th>
-                <th>Goal Description</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-            </tr>
-            <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-            </tr>
-        </tbody>
+      <tbody>
+        <tr>
+          <td>
+            <a href="/students/student/{{student.id}}">
+              <h6>
+                {{Goal.goal.name}}
+              </h6>
+            </a>
+          </td>
+          <td>{{Goal.goal.description}}</td>
+        </tr>
+      </tbody>
     </table>
+    {{/each}}
+  </div>
 </div>
 <footer class="footer-goal">
-    <a class="waves-effect waves-light btn modal-trigger" href="#add-student-modal">New Goal</a>
+  <a class="waves-effect waves-light btn modal-trigger" href="#add-goal-modal">New Goal</a>
 </footer>
-<!-- <div>
-    <h2>
-      {{username}}
-    </h2>
-    <ul>
-      {{#each students as |student|}}
-      <li>
-        <a href="/students/student/{{student.id}}">
-          <h3>
-            {{student.last_name}}{{#if student.first_name}}, {{student.first_name}}{{/if}}
-          </h3>
-        </a>
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-  <footer>
-    <p>SLP Goalden &copy; 2021</p>
-    <a class="waves-effect waves-light btn modal-trigger" href="#add-student-modal">+ Student</a>
-  </footer>
-  
-  Modal Structure
-  <div id="add-student-modal" class="modal">
-    <div class="modal-content">
-      <h4>How many students would you like to add?</h4>
-      <p>Please enter a number between 1-30</p>
-    </div>
-    <div class="input-field modal-input">
-      <label for="stud-number">Number of students</label>
-      <input type="number" name="stud-number" id="stud-number">
-    </div>
-    <div class="modal-input">
-      <button class="btn waves-effect waves-light" id="number-confirm">
-        <i class="material-icons right">Accept</i>
-      </button>
-    </div>
-  </div> -->
 
+
+<!-- Modal Structure -->
+<div id="add-goal-modal" class="modal">
+  <div class="modal-content">
+    <h4>Goal</h4>
+    <p>Enter the Name of the Goal</p>
+  </div>
+  <div class="input-field modal-input">
+    <label for="add-goal-">Goal</label>
+    <input type="text" name="add-goal" id="add-goal">
+  </div>
+  <div class="modal-input">
+    <button class="btn waves-effect waves-light" id="number-confirm">
+      Accept
+    </button>
+  </div>
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

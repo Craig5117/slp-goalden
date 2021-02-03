@@ -1,17 +1,64 @@
+<div class="sing-student-container">
+    <h4>
+        {{username}}
+    </h4>
+    <div>
+        <h4 class="left">
+            Student Name: {{studentName}}
+        </h4>
+
+        {{#each studentGoals as |studentGoal|}}
+        <table class="striped centered responsive-table" style="border: 3px #516360 solid;">
+            <thead>
+                <tr>
+                    <th>Goal</th>
+                    <th>Goal Description</th>
+                    <th>Trial Date</th>
+                    <th>Successful Trials</th>
+                    <th>Percentage of Successful Trials</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each studentGoal.trials as |trial|}}
+                <tr>
+                    <td>{{studentGoal.goal.name}}</td>
+                    <td>{{studentGoal.goal.description}}</td>
+                    <td>{{trial.date}}</td>
+                    <td>{{trial.successful}}</td>
+                    <td>{{trial.percent}}</td>                      
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{/each}}
+    </div>
+</div>
+
+
+<footer class="footer-sing-student">
+    <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to
+        Student</a>
+    <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial Data</a>
+</footer>
+
+
+{{!--
 <div class="wrapper" style="border: 3px #516360 solid;">
     <div class="student-name-wrapper">
         <h2 class="student-name" style="border: 3px #516360 solid;"> {{studentName}} </h2>
     </div>
 
-    <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to Student</a>
-    {{!-- {{#if studentGoals }} --}}
+    <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to
+        Student</a>
+    {{#if studentGoals }}
     <div class="goals-wrapper">
         {{#each studentGoals as |studentGoal|}}
         <div class="goals-input">
             <h4> {{studentGoal.goal.name}} </h4>
             <p> {{studentGoal.goal.description}} </p>
         </div>
-    
+
 
         <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial Data</a>
 
@@ -28,7 +75,7 @@
         </div>
         {{/each}}
     </div>
-</div>
+</div> --}}
 
 
 
