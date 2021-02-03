@@ -5,6 +5,11 @@
 #edd8ca
 #d3c6b7 */
 
+label {
+    width: 90%;
+    padding-left: 2rem;
+}
+
 .marquee {
     text-align:center;
     font-size: 31px;
@@ -109,23 +114,25 @@ a {
     color: #d3c6b7;
     width: 100%;
 }
-.trial-header {
+.input-header {
     width: 100%;
     text-align: center;
     padding-bottom: 2rem;
     margin-top: 0cm;
 }
-.trial-input {
+.input-field {
     width: 90%; 
     text-align: left;
     background-color: #cedbd8;
     padding-left: 2rem;
 }
+
 form { 
     justify-content: flex-start;
     background-color: #cedbd8;
     margin-right: 0%;
 }
+
 button {
     margin: 16px;
 }
