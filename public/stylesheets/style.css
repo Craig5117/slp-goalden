@@ -1,8 +1,7 @@
 .marquee {
     text-align:center;
-    font-size: 30px;
+    font-size: 31px;
     padding: 20px 0;
-    font-style: Bebas Neue;
 }
 
 .container {
@@ -16,11 +15,6 @@
     padding: 10px;
 }
 
-h3 {
+h4 {
     text-align: center;
 }
-
-
-
-
-
