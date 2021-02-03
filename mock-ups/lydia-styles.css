@@ -5,43 +5,13 @@
 #edd8ca
 #d3c6b7 */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-label {
-    width: 90%;
-    padding-left: 2rem;
-}
-
-.marquee {
-    text-align:center;
-    font-size: 31px;
-    padding: 20px 0;
-}
-
 header {
     color: #516360;
-    background-color: #516360;
 }
 body {
     background-color: #edd8ca;
 }
-.logo {
-    font-size: 5rem;
-    font-weight: bold;
-    padding-left: 1.5rem;
-    border-top: solid 1px #516360;
-    margin-top: -1px;
-    margin-bottom: 1rem;
-    background-image: linear-gradient(to bottom right, #CDB153, white);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
-}
+
 h2 {
     color: #516360;
 }
@@ -53,17 +23,14 @@ h3 {
 h4 {
     color: #516360;
     font-weight: 300;
-    text-align: center;
 }
-
 .sticky-footer {
     position: fixed;
     width: 100%;
+    margin: 5rem;
     box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
-    left: 0;
-    bottom: 0;
-    text-align: center;
 }
+
 
 /* Single-Student */
 .wrapper {
@@ -109,15 +76,7 @@ a {
     padding: 0%;
     margin: 5%;
     width: 50%;
-    flex-direction: column;
 }
-
-.container-form {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
-
 .student-id-trial {
     justify-content: flex-start;
     color: #d3c6b7;
@@ -141,25 +100,24 @@ a {
     color: #d3c6b7;
     width: 100%;
 }
-.input-header {
+.trial-header {
     width: 100%;
     text-align: center;
     padding-bottom: 2rem;
     margin-top: 0cm;
 }
-.input-field {
+.trial-input {
     width: 90%; 
     text-align: left;
     background-color: #cedbd8;
     padding-left: 2rem;
 }
-
 form { 
     justify-content: flex-start;
+    width: 40%;
     background-color: #cedbd8;
     margin-right: 0%;
 }
-
 button {
     margin: 16px;
 }
