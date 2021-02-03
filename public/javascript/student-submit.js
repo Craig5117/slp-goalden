@@ -2,10 +2,12 @@ async function studentSubmitHandler(event) {
   event.preventDefault();
   // const username =
   const elements = document.getElementById("stud-submit").elements;
+  console.log(elements);
   const userId = document
     .getElementById("stud-submit")
     .getAttribute("data-userID");
   let postArr = [];
+  
   function getStudentPostArr() {
     for (let i = 0; i < elements.last_name.length; ++i) {
       let studentNameObj = {
