@@ -19,7 +19,7 @@ async function trialSubmitHandler(event) {
   // this needs a fetch Get to studentGoal.
   // If studentGoal.user_id = req.sessions.user_id,
   // const studentId = studentGoal.student_id (for the link back to single student)
-  if (trialsSucceeded > trialsAttempted) {
+  if (parseInt(trialsSucceeded) > parseInt(trialsAttempted)) {
     return alert(
       "The trials successful trials should not be greater than attempted. Double check that you have entered the correct number in each field."
     );
