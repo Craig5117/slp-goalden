@@ -1,0 +1,387 @@
+/* Color Bank:
+#516360
+#6d9387
+#cedbd8
+#edd8ca
+#d3c6b7 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+label {
+    width: 90%;
+    padding-left: 2rem;
+}
+
+.marquee {
+    background-color: rgb(142, 155, 142);
+    text-align:center;
+    font-size: 31px;
+    padding: 7px 0;
+    font-family: "Amatic SC";
+    font-size: 48px;
+}
+
+.main {
+    background-color:rgb(192, 191, 191);
+    padding: 35px 0 0 0;
+    height: 780px;
+}
+
+.input-1 {
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.input-2 {
+    background-color: white;
+    border-radius:0 0 5px 5px;
+}
+
+.student-input {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.goal-input {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+}
+
+header {
+    color: #516360;
+    background-color: #516360;
+}
+
+nav {
+    background-color: #cedbd8;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2em;
+}
+
+nav a {
+    margin: 0 2em;
+}
+
+body {
+    background-color: #edd8ca;
+}
+
+.logo {
+    font-size: 5rem;
+    font-weight: bold;
+    padding-left: 1.5rem;
+    border-top: solid 1px #516360;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to bottom right, #CDB153, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+h2 {
+    color: #516360;
+    margin: 0;
+}
+h3 {
+    
+    color: #516360;
+    font-weight: 300;
+    padding: .5rem;
+    margin: 0;
+    line-height: normal;
+}
+h4 {
+    color: #516360;
+    font-weight: 300;
+    text-align: center;
+}
+h5 {
+    padding-bottom: .5rem;
+    margin-top: 0cm;
+}
+.btn {
+    background-color: #6d9387; 
+    border: none;
+    color: #cedbd8;
+    text-decoration: none;
+} 
+
+button {
+    margin: 16px;
+}
+.sticky-footer {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: #516360;
+    padding: 1em;
+}
+
+.with-footer {
+    margin-bottom: 5rem;
+}
+
+ul {
+    column-count: 3;
+    padding: 2em;
+    
+}
+
+/* .list-container {
+    display: flex;
+    flex-direction: column;
+}  */
+
+/* .list-item {
+    background-color: #6d9387;
+    border-radius: .5em;
+    margin: .5em
+} */
+
+/* MODAL STYLING */
+.modal-input{
+    padding: 0 3em;
+}
+.modal-input label {
+    padding-left: 3em;
+}
+.button-style {
+    padding: 70px 0 0px 0;
+}
+
+
+/* All Goals View */
+.all-goals-container {
+    padding: 2rem;
+}
+.footer-goal {
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border: #516360 solid;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
+}
+.all-goals-container {
+    padding: 2rem;
+}
+
+/* Single-Student */
+.sing-student-container {
+    /* display: flex;
+    padding: 2rem; */
+    width: 100%;
+}
+table {
+    background-color: #cedbd8;
+}
+.footer-sing-student {
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border: #516360 solid;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
+}
+ /* .wrapper { 
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 75%;
+    background-color: #cedbd8;
+    
+} */
+
+.goal-card {
+    /* width: 75%; */
+    background-color:  #516360;
+    height: 21em;
+    overflow-y: scroll;
+
+}
+
+.student-goals-container {
+    /* display: flex; */
+    /* justify-content: space-between;  */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row .col {
+    padding: 0;
+    margin-left: 4em;
+    margin-right: 4em;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.table-header {
+    color: #cedbd8;
+    background-color: #516360;
+    width: 100%;    
+    height: 7em;
+}
+
+.table-info {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.goal-info-container {
+    padding: .5em 1em 1em 2em;
+    width: 70%
+}
+
+.add-trial {
+    position: relative;
+    z-index: -1;
+}
+
+.add-trial-container {
+    padding: 1em;
+    width: 30%;
+}
+
+.stack-top{
+    z-index: 9999;
+}
+
+.table-height {
+    max-height: 14em;
+    overflow-y: scroll;
+}
+/*
+.goals-input {
+    width: 100%;
+    text-align: center;
+}
+.student-name-wrapper {
+    width: 100%; 
+    text-align: center;
+    background-color: #516360;
+    color: #d3c6b7;
+}
+.student-name {
+    color: #d3c6b7;
+}
+.goals-wrapper {
+    width: 100%; 
+    text-align: center;
+}
+.student-trials {
+    width: 100%;
+    text-align: center;
+}
+.wrapper a {
+    width: 20%;
+    text-align: center; 
+}
+}  */
+/* a {
+    margin: 16px;
+} */
+
+.goal-form-container {
+    margin-top: 5em;
+    padding-left: 3em;
+    width: 75%;
+}
+
+#goal-form {
+    padding-top: 1em;
+}
+
+/* Trial Submission Form */
+.container {
+    display: flex;  
+    padding: 0%;
+    margin: 5%;
+    width: 50%;
+    flex-direction: column;
+}
+.container-form {
+    margin: auto;
+    width: 50%;
+    padding: 0 25px;
+}
+.student-id-trial {
+    justify-content: flex-start;
+    color: #d3c6b7;
+    width: 60%;
+    text-align: left;
+}
+.student-id-trial h3 {
+    background-color: #516360;
+    color: #d3c6b7;
+    margin-top: 0cm;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
+.row {
+    margin-right: 0cm;
+    margin-bottom: 0cm;
+    margin-top: 0cm;
+}
+.row h4 {
+    background-color: #516360;
+    color: #d3c6b7;
+    width: 100%;
+}
+.input-header {
+    width: 100%;
+}
+.input-field {
+    width: 90%; 
+    text-align: left;
+    background-color: #cedbd8;
+    padding-left: 2rem;
+}
+form { 
+    justify-content: flex-start;
+    background-color: #cedbd8;
+    margin-right: 0%;
+}
+
+button {
+    margin: 16px;
+}
+.modal-input{
+    padding: 0 3em;
+}
+.modal-input label {
+    padding-left: 3em;
+}
+
+.button-style {
+    padding: 70px 0 0px 0;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(142, 155, 142);
+    margin: 0px 0 0px 0;
+    padding: 10px;
+    text-align: center;
+}

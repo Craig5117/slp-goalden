@@ -1,0 +1,64 @@
+<div class="container" style="border: 3px #516360 solid;">
+    <div class="student-id-trial">
+       <h3 data-studentID="{{studentId}}" id="student-name">{{studentName}}</h4>
+       <h4>{{goalName}}</h4>
+       <p>{{goalDesc}}</p>
+   </div>
+   <form class="row" style="border: 3px #516360 solid;" id="trial-form" data-userID="{{userId}}">
+       <h4 class="input-header">Trial Submission Form</h4>
+       
+       <div class="input-field">
+           <label for="date-input">Date of Trial Session</label>
+           <input type="text" class="datepicker" id="date-input">
+           <!-- <input type="date" name="date-trial-session"> -->
+       </div>
+      
+        
+       <div class="input-field">
+           <label for="trials-attempted" class="">Trials Attempted</label>
+           <input type="text" name="trials-attempted" id="trials-attempted">
+       </div>
+      
+       <div class="input-field">
+           <label for="trials-successful" class="">Trials Successful</label>
+           <input type="text" name="trials-successful" id="trials-successful">
+       </div>
+       
+       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+           <i class="material-icons right">send</i>
+       </button>
+       <!-- <button type="submit">Submit</button> -->
+   </form>
+  
+</div>
+
+{{!-- <div class="container">
+     <div class="row">
+        <h4 data-studentID="{{studentId}}" id="student-name">{{studentName}}</h4>
+        <h4>{{goalName}}</h4>
+        <p>{{goalDesc}}</p>
+    </div>
+    <form class="row" id="trial-form" data-userID="{{userId}}">
+        <h4>Trial Submission Form</h4>
+        <div class="input-field">
+            <label for="date-input">Date of Trial Session</label>
+            <input type="text" class="datepicker" id="date-input">
+            <!-- <input type="date" name="date-trial-session"> -->
+        </div>
+        <div class="input-field">
+            <label for="trials-attempted" class="">Trials Attempted</label>
+            <input type="text" name="trials-attempted" id="trials-attempted">
+        </div>
+        <div class="input-field">
+            <label for="trials-successful" class="">Trials Successful</label>
+            <input type="text" name="trials-successful" id="trials-successful">
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+        <!-- <button type="submit">Submit</button> -->
+    </form>
+   
+</div>
+ --}}
+<script src="/javascript/trial-submit.js"></script>

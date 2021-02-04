@@ -1,0 +1,42 @@
+<div class="with-footer">
+ 
+  <div class="list-container">
+  <ul>
+    {{#each students as |student|}}
+    <li >
+      <div class="list-item">
+      <a  href="/students/student/{{student.id}}">
+        <h3>
+          {{student.last_name}}{{#if student.first_name}}, {{student.first_name}}{{/if}}
+        </h3>
+      </a>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+  </div>
+</div>
+ <footer class="new-post-footer sticky-footer">
+        <a class="waves-effect waves-light btn modal-trigger" href="#add-student-modal">+ Student</a>
+        <i class="material-icons"></i>
+    </footer>
+
+
+<!-- Modal Structure -->
+<div id="add-student-modal" class="modal">
+  <div class="modal-content">
+    <h4>How many students would you like to add?</h4>
+    <p>Please enter a number between 1-30</p>
+  </div>
+  <div class="input-field modal-input">
+    <label for="stud-number">Number of students</label>
+    <input type="number" name="stud-number" id="stud-number">
+  </div>
+  <div class="modal-input">
+    <button class="btn waves-effect waves-light" id="number-confirm">
+      Accept
+    </button>
+  </div>
+</div>
+
+<script src="/javascript/all-students.js"></script>

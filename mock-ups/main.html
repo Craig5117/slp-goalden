@@ -15,44 +15,36 @@
 <body>
     <div>
         <header>
-            <h1 class="center-align logo">SLP Goalden</h1>
+            <h1 class="center-align">SLP Goalden</h1>
             {{#if loggedIn}}
             <nav>
-                <div>
-                    <h2 id="username" data-userID="{{userId}}">{{username}}</h2>
-                </div>
-                <div>
-                    <a href="/students" class="btn waves-effect waves-light">
-                        Your Students
-                    </a>
-                    <a href="/goals" class="btn waves-effect waves-light">
-                        Your Goals
-                    </a>
-                    <a href="" id="logout" class="btn waves-effect waves-light">
-                        Log Out
-                    </a>
-                </div>
+            <a href="/dashboard" class="btn waves-effect waves-light">
+                   Dashboard
+            </a>
+            <a href="" id="logout" class="btn waves-effect waves-light">
+                    Log Out
+            </a>
             </nav>
             {{/if}}
         </header>
         {{#unless loggedIn}}
         <div>
-            <p>SLP Goalden is a web application that helps you conveniently store student goals and trial data. Log in
-                or sign-up to get started.</p>
+            <p>SLP Goalden is a web application that helps you conveniently store student goals and trial data. Log in or sign-up to get started.</p>
         </div>
         {{/unless}}
         <main>
             {{{ body }}}
         </main>
-        {{!-- <footer>
-            <p>SLP Goalden &copy; 2021</p>
-        </footer> --}}
     </div>
-
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <footer class="new-post-footer sticky-footer">
+        <button id="new-post-btn">+ Student</button>
+        <i class="material-icons center"></i>
+    </footer>
 </body>
 
 </html>
+

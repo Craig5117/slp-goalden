@@ -1,0 +1,139 @@
+/* Color Bank:
+#516360
+#6d9387
+#cedbd8
+#edd8ca
+#d3c6b7 */
+
+header {
+    color: #516360;
+}
+body {
+    background-color: #edd8ca;
+}
+
+h2 {
+    color: #516360;
+}
+
+h3 {
+    color: #516360;
+    font-weight: 300;
+}
+h4 {
+    color: #516360;
+    font-weight: 300;
+}
+.sticky-footer {
+    position: fixed;
+    width: 100%;
+    margin: 5rem;
+    box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
+}
+
+
+/* Single-Student */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* height: 75%; */
+    background-color: #cedbd8;
+    /* text-align: right; */
+}
+.goals-input {
+    width: 100%;
+    text-align: center;
+}
+.student-name-wrapper {
+    width: 100%; 
+    text-align: center;
+    background-color: #516360;
+    color: #d3c6b7;
+}
+.student-name {
+    color: #d3c6b7;
+}
+.goals-wrapper {
+    width: 100%; 
+    text-align: center;
+}
+.student-trials {
+    width: 100%;
+    text-align: center;
+}
+.wrapper a {
+    width: 20%;
+    text-align: center; 
+}
+a {
+    margin: 16px;
+}
+
+/* Trial Submission Form */
+.container {
+    display: flex;  
+    padding: 0%;
+    margin: 5%;
+    width: 50%;
+}
+.student-id-trial {
+    justify-content: flex-start;
+    color: #d3c6b7;
+    width: 60%;
+    text-align: left;
+}
+.student-id-trial h3 {
+    background-color: #516360;
+    color: #d3c6b7;
+    margin-top: 0cm;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
+.row {
+    margin-right: 0cm;
+    margin-bottom: 0cm;
+    margin-top: 0cm;
+}
+.row h4 {
+    background-color: #516360;
+    color: #d3c6b7;
+    width: 100%;
+}
+.trial-header {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-top: 0cm;
+}
+.trial-input {
+    width: 90%; 
+    text-align: left;
+    background-color: #cedbd8;
+    padding-left: 2rem;
+}
+form { 
+    justify-content: flex-start;
+    width: 40%;
+    background-color: #cedbd8;
+    margin-right: 0%;
+}
+button {
+    margin: 16px;
+}
+.modal-input{
+    padding: 0 3em;
+}
+.modal-input label {
+    padding-left: 3em;
+}
+.btn {
+    background-color: #6d9387; 
+    border: none;
+    color: #cedbd8;
+    text-decoration: none;
+} 
+
+/* div {
+    background-color: #edd8ca;
+} */

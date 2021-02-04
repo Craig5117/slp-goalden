@@ -1,0 +1,51 @@
+<div class="all-goals-container">
+  <div>
+  
+    {{#each userGoals as |goal|}}
+    <table class="striped responsive-table" style="border: 3px #516360 solid;">
+      <thead>
+        <tr>
+          <th>Goal</th>
+          <th>Goal Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <a href="/students/student/{{student.id}}">
+              <h6>
+                {{goal.name}}
+              </h6>
+            </a>
+          </td>
+          <td>{{goal.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+    {{/each}}
+  </div>
+</div>
+<footer class="new-post-footer sticky-footer stack-top">
+  <a class="waves-effect waves-light btn modal-trigger" href="/goals/submit">New Goal</a>
+</footer>
+
+
+{{!-- <!-- Modal Structure -->
+<div id="add-goal-modal" class="modal">
+  <div class="modal-content">
+    <h4>Goal</h4>
+    <p>Enter the Name of the Goal</p>
+  </div>
+  <div class="input-field modal-input">
+    <label for="add-goal-">Goal</label>
+    <input type="text" name="add-goal" id="add-goal">
+  </div>
+  <div class="modal-input">
+    <button class="btn waves-effect waves-light" id="number-confirm">
+      Accept
+    </button>
+  </div>
+</div> --}}
+
+{{!-- <script src="/public/javascript/all-goal-view.js"></script> --}}
