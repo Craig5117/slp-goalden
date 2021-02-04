@@ -1,14 +1,14 @@
 <div>
     
-    <p>Add a goal to <span>{{studentName}}</span></p>
-    <div>
-        <ul id="goal-bank">
+    <p class="page-text center-align">Add a goal to <span>{{studentName}}</span></p>
+    <div class="row goal-bank-container">
+       
         {{#each userGoals as |goal|}}
-            <li>
-            <button class="btn waves-effect waves-light goal-btn" type="submit" name="action" data-goalID="{{goal.id}}">{{goal.name}}</button>
-            </li>
+            
+            <button class="btn waves-effect waves-light goal-btn col s2" type="submit" name="action" data-goalID="{{goal.id}}">{{goal.name}}</button>
+            
         {{/each}}
-        </ul>
+        
     </div>
 </div>
 

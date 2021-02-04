@@ -1,19 +1,30 @@
 <div class="with-footer">
  
   <div class="list-container">
-  <ul>
-    {{#each students as |student|}}
-    <li >
-      <div class="list-item">
+  <table class="striped" style="border: 3px #516360 solid;">
+      <thead>
+        <tr>
+          <th><h5 style="font-weight: bold;">Student Name</h5></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each students as |student|}}
+  
+     <tr>
+       <td>
       <a  href="/students/student/{{student.id}}">
-        <h3>
+        <h5>
           {{student.last_name}}{{#if student.first_name}}, {{student.first_name}}{{/if}}
-        </h3>
+        </h5>
       </a>
-      </div>
-    </li>
+      </td>
+      </tr>
     {{/each}}
-  </ul>
+      </tbody>
+    </table>
+    
+
   </div>
 </div>
  <footer class="new-post-footer sticky-footer">

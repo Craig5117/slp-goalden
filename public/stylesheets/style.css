@@ -10,6 +10,7 @@
     padding: 0;
     box-sizing: border-box;
   }
+
 label {
     width: 90%;
     padding-left: 2rem;
@@ -18,10 +19,17 @@ label {
 .margin-collapse {
     margin: -1px;
 }
-.margin-collapse {
-    margin: -1px;
+
+.margin-auto {
+    margin: 0 auto;
 }
 
+#login-page-background {
+    background-image: url('/images/logo-image.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right center;
+}
 /* .marquee {
     background-color: rgb(142, 155, 142);
     text-align:center;
@@ -34,6 +42,7 @@ label {
     color: #516360;
     width: 75%;
     margin: 0 auto;
+    font-size: 1.5em;
 }
 .main {
     background-color:rgb(192, 191, 191);
@@ -60,6 +69,8 @@ label {
     background-color: white;
     border-radius: 5px 5px 5px 5px;
 }
+
+
 
 header {
     color: #516360;
@@ -122,6 +133,7 @@ h4 {
 h5 {
     padding-bottom: .5rem;
     margin-top: 0cm;
+    color:  #516360;
 }
 .btn {
     background-color: #6d9387; 
@@ -188,6 +200,10 @@ li {
     padding: 70px 0 0px 0;
 }
 
+.goal-bank-container {
+    width: 85%;
+    margin: 0 auto,
+}
 
 /* All Goals View */
 .all-goals-container {
@@ -330,9 +346,9 @@ th, td {
     text-align: center; 
 }
 }  */
-/* a {
-    margin: 16px;
-} */
+a {
+    color: #516360;
+}
 
 .goal-form-container {
     margin-top: 5em;
@@ -353,7 +369,7 @@ th, td {
     flex-direction: column;
 } */
 .container-form {
-    margin: auto;
+    margin: 2em 0;
     width: 50%;
     
 }
@@ -388,8 +404,8 @@ th, td {
     width: 100%;
     color: #d3c6b7;
     background-color: #516360;
-    border-left: solid 1px #516360;
-    margin-right: -1px;
+    margin-top: 0;
+    padding: 1rem;
 }
 .login-header {
     padding: .3em;
@@ -456,5 +472,8 @@ footer {
     }
     .add-trial-container {
         width: 20%;
+    }
+    .goal-bank-container{
+        width: 90%;
     }
   }
