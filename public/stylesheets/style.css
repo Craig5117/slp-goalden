@@ -16,9 +16,38 @@ label {
 }
 
 .marquee {
+    background-color: rgb(142, 155, 142);
     text-align:center;
     font-size: 31px;
-    padding: 20px 0;
+    padding: 7px 0;
+    font-family: "Amatic SC";
+    font-size: 48px;
+}
+
+.main {
+    background-color:rgb(192, 191, 191);
+    padding: 35px 0 0 0;
+    height: 780px;
+}
+
+.input-1 {
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.input-2 {
+    background-color: white;
+    border-radius:0 0 5px 5px;
+}
+
+.student-input {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.goal-input {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
 }
 
 header {
@@ -40,6 +69,7 @@ nav a {
 body {
     background-color: #edd8ca;
 }
+
 .logo {
     font-size: 5rem;
     font-weight: bold;
@@ -54,11 +84,11 @@ body {
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
 }
+
 h2 {
     color: #516360;
     margin: 0;
 }
-
 h3 {
     
     color: #516360;
@@ -72,6 +102,11 @@ h4 {
     font-weight: 300;
     text-align: center;
 }
+h5 {
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-top: 0cm;
+}
 .btn {
     background-color: #6d9387; 
     border: none;
@@ -79,6 +114,9 @@ h4 {
     text-decoration: none;
 } 
 
+button {
+    margin: 16px;
+}
 .sticky-footer {
     position: fixed;
     width: 100%;
@@ -110,7 +148,23 @@ ul {
     border-radius: .5em;
     margin: .5em
 } */
+
+/* MODAL STYLING */
+.modal-input{
+    padding: 0 3em;
+}
+.modal-input label {
+    padding-left: 3em;
+}
+.button-style {
+    padding: 70px 0 0px 0;
+}
+
+
 /* All Goals View */
+.all-goals-container {
+    padding: 2rem;
+}
 .footer-goal {
     padding: 1rem;
     margin-left: 2rem;
@@ -120,7 +174,6 @@ ul {
     width: 100%;
     text-align: center;
     position: fixed;
-    /* margin: 5rem; */
     box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
 }
 .all-goals-container {
@@ -136,7 +189,6 @@ table {
     background-color: #cedbd8;
 }
 .footer-sing-student {
-    /* position: fixed; */
     padding: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
@@ -145,16 +197,15 @@ table {
     width: 100%;
     text-align: center;
     position: fixed;
-    /* margin: 5rem; */
     box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
 }
-.wrapper {
+/* .wrapper { 
     display: flex;
     flex-direction: column;
     width: 50%;
-    /* height: 75%; */
+    height: 75%;
     background-color: #cedbd8;
-    /* text-align: right; */
+    text-align: right;
 }
 .goals-input {
     width: 100%;
@@ -181,6 +232,7 @@ table {
     width: 20%;
     text-align: center; 
 }
+}  */
 /* a {
     margin: 16px;
 } */
@@ -193,13 +245,11 @@ table {
     width: 50%;
     flex-direction: column;
 }
-
 .container-form {
     margin: auto;
     width: 50%;
-    padding: 10px;
+    padding: 0 25px;
 }
-
 .student-id-trial {
     justify-content: flex-start;
     color: #d3c6b7;
@@ -225,9 +275,6 @@ table {
 }
 .input-header {
     width: 100%;
-    text-align: center;
-    padding-bottom: 2rem;
-    margin-top: 0cm;
 }
 .input-field {
     width: 90%; 
@@ -235,7 +282,6 @@ table {
     background-color: #cedbd8;
     padding-left: 2rem;
 }
-
 form { 
     justify-content: flex-start;
     background-color: #cedbd8;
@@ -250,4 +296,19 @@ button {
 }
 .modal-input label {
     padding-left: 3em;
+}
+
+.button-style {
+    padding: 70px 0 0px 0;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(142, 155, 142);
+    margin: 0px 0 0px 0;
+    padding: 10px;
+    text-align: center;
 }
