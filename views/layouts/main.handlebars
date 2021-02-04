@@ -19,17 +19,18 @@
             {{#if loggedIn}}
             <nav>
                 <div>
-               <h2>
-                    {{username}}
-                </h2>
+                    <h2 id="username" data-userID="{{userId}}">{{username}}</h2>
                 </div>
                 <div>
-                <a href="/dashboard" class="btn waves-effect waves-light">
-                    Dashboard
-                </a>
-                <a href="" id="logout" class="btn waves-effect waves-light">
-                    Log Out
-                </a>
+                    <a href="/students" class="btn waves-effect waves-light">
+                        Your Students
+                    </a>
+                    <a href="/goals" class="btn waves-effect waves-light">
+                        Your Goals
+                    </a>
+                    <a href="" id="logout" class="btn waves-effect waves-light">
+                        Log Out
+                    </a>
                 </div>
             </nav>
             {{/if}}
