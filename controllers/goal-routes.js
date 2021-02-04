@@ -5,6 +5,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
     const userId = req.session.user_id;
+    const username = req.session.username;
     Goal.findAll({
         where: {
             // targets only goals relevant to current user
@@ -17,10 +18,17 @@ router.get("/", withAuth, (req, res) => {
         ]
     })
     .then((goalData) => {
+        console.log(goalData)
+        if (goalData == null) {
+        res.render("all-goal-view", {username, userId});
+        }
+        else {
         const userGoals = goalData.map((userGoal) => 
           userGoal.get({ plain: true })
         );
-        res.json(userGoals);
+        res.render("all-goal-view", {userGoals, username, userId});
+        }
+        
       })
       .catch((err) => {
         console.log(err);

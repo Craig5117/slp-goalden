@@ -4,7 +4,7 @@
   </h3>
   <div>
   
-    {{#each studentGoals as |studentGoal|}}
+    {{#each userGoals as |goal|}}
     <table class="striped responsive-table" style="border: 3px #516360 solid;">
       <thead>
         <tr>
@@ -18,11 +18,11 @@
           <td>
             <a href="/students/student/{{student.id}}">
               <h6>
-                {{Goal.goal.name}}
+                {{goal.name}}
               </h6>
             </a>
           </td>
-          <td>{{Goal.goal.description}}</td>
+          <td>{{goal.description}}</td>
         </tr>
       </tbody>
     </table>
