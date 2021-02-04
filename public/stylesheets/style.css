@@ -29,6 +29,7 @@ label {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right center;
+    background-size: 50%;
 }
 /* .marquee {
     background-color: rgb(142, 155, 142);
