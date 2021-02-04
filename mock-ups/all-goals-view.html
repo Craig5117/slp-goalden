@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="../public/stylesheets/materialize.css">
+<link rel="stylesheet" href="../public/stylesheets/style.css">
+
+<div class="all-goals-container">
+  <h3 class="left">
+    Username:{{username}}
+  </h3>
+  <div>
+  
+    {{#each studentGoals as |studentGoal|}}
+    <table class="striped responsive-table" style="border: 3px #516360 solid;">
+      <thead>
+        <tr>
+          <th>Goal</th>
+          <th>Goal Description</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <a href="/students/student/{{student.id}}">
+              <h6>
+                {{Goal.goal.name}}
+              </h6>
+            </a>
+          </td>
+          <td>{{Goal.goal.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+    {{/each}}
+  </div>
+</div>
+<footer class="footer-goal">
+  <a class="waves-effect waves-light btn modal-trigger" href="#add-goal-modal">New Goal</a>
+</footer>
+
+
+<!-- Modal Structure -->
+<div id="add-goal-modal" class="modal">
+  <div class="modal-content">
+    <h4>Goal</h4>
+    <p>Enter the Name of the Goal</p>
+  </div>
+  <div class="input-field modal-input">
+    <label for="add-goal-">Goal</label>
+    <input type="text" name="add-goal" id="add-goal">
+  </div>
+  <div class="modal-input">
+    <button class="btn waves-effect waves-light" id="number-confirm">
+      Accept
+    </button>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

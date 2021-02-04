@@ -72,6 +72,12 @@ h4 {
     font-weight: 300;
     text-align: center;
 }
+.btn {
+    background-color: #6d9387; 
+    border: none;
+    color: #cedbd8;
+    text-decoration: none;
+} 
 
 .sticky-footer {
     position: fixed;
@@ -104,8 +110,44 @@ ul {
     border-radius: .5em;
     margin: .5em
 } */
+/* All Goals View */
+.footer-goal {
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border: #516360 solid;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    /* margin: 5rem; */
+    box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
+}
+.all-goals-container {
+    padding: 2rem;
+}
 
 /* Single-Student */
+.sing-student-container {
+    /* display: flex; */
+    padding: 2rem;
+}
+table {
+    background-color: #cedbd8;
+}
+.footer-sing-student {
+    /* position: fixed; */
+    padding: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    border: #516360 solid;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    /* margin: 5rem; */
+    box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
+}
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -209,13 +251,3 @@ button {
 .modal-input label {
     padding-left: 3em;
 }
-.btn {
-    background-color: #6d9387; 
-    border: none;
-    color: #cedbd8;
-    text-decoration: none;
-} 
-
-/* div {
-    background-color: #edd8ca;
-} */
