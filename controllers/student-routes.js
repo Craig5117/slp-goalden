@@ -81,9 +81,9 @@ router.get('/student/:id', withAuth, (req, res) => {
 				},
 				{
 					model: Trial,
-					attributes: ['date', 'successful', 'percent']
-				}
-			]
+                    attributes: ['date', 'successful', 'percent'],
+				}, 
+            ],
 		})
 			.then(studentGoalData => {
 				const studentGoals = studentGoalData.map(studentGoal =>

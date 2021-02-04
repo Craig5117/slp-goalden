@@ -1,9 +1,13 @@
+<div class="trial-submit-wrapper">
 <div class="container" style="border: 3px #516360 solid;">
-    <div class="student-id-trial">
-       <h3 data-studentID="{{studentId}}" id="student-name">{{studentName}}</h4>
+   <h3 data-studentID="{{studentId}}" id="student-name" class="center-align student-name-header margin-collapse">{{studentName}}</h4>
+    <div class="student-id-trial container">
+    
        <h4>{{goalName}}</h4>
-       <p>{{goalDesc}}</p>
-   </div>
+       <p class="center-align">{{goalDesc}}</p>
+
+       
+   
    <form class="row" style="border: 3px #516360 solid;" id="trial-form" data-userID="{{userId}}">
        <h4 class="input-header">Trial Submission Form</h4>
        
@@ -29,9 +33,11 @@
        </button>
        <!-- <button type="submit">Submit</button> -->
    </form>
+   
+   </div>
   
 </div>
-
+</div>
 {{!-- <div class="container">
      <div class="row">
         <h4 data-studentID="{{studentId}}" id="student-name">{{studentName}}</h4>

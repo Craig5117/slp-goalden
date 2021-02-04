@@ -1,8 +1,8 @@
 <div class="all-goals-container">
   <div>
-  
-    {{#each userGoals as |goal|}}
-    <table class="striped  responsive-table" style="border: 3px #516360 solid;">
+
+    
+    <table class="striped" style="border: 3px #516360 solid;">
       <thead>
         <tr>
           <th>Goal</th>
@@ -11,29 +11,27 @@
       </thead>
 
       <tbody>
+        {{#each userGoals as |goal|}}
         <tr>
-          <td>
-            <a href="/students/student/{{student.id}}">
-              <h6>
-                {{goal.name}}
-              </h6>
-            </a>
-          </td>
+          <td>{{goal.name}}</td>
           <td>{{goal.description}}</td>
-        </tr>
+         
+        </tr> 
+        {{/each}}
       </tbody>
     </table>
-    {{/each}}
+    
   </div>
 </div>
 <footer class="new-post-footer sticky-footer stack-top">
   <a class="waves-effect waves-light btn" href="/goals/submit">New Goal
-  <i class="material-icons left">add_circle_outline</i>
+    <i class="material-icons left">add_circle_outline</i>
   </a>
 </footer>
 
 
-{{!-- <!-- Modal Structure -->
+{{!--
+<!-- Modal Structure -->
 <div id="add-goal-modal" class="modal">
   <div class="modal-content">
     <h4>Goal</h4>
@@ -50,4 +48,5 @@
   </div>
 </div> --}}
 
-{{!-- <script src="/public/javascript/all-goal-view.js"></script> --}}
+{{!--
+<script src="/public/javascript/all-goal-view.js"></script> --}}

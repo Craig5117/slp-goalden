@@ -15,15 +15,26 @@ label {
     padding-left: 2rem;
 }
 
-.marquee {
+.margin-collapse {
+    margin: -1px;
+}
+.margin-collapse {
+    margin: -1px;
+}
+
+/* .marquee {
     background-color: rgb(142, 155, 142);
     text-align:center;
     font-size: 31px;
     padding: 7px 0;
    
     font-size: 48px;
+} */
+.page-text {
+    color: #516360;
+    width: 75%;
+    margin: 0 auto;
 }
-
 .main {
     background-color:rgb(192, 191, 191);
     padding: 35px 0 0 0;
@@ -131,6 +142,7 @@ button {
     text-align: center;
     background-color: #516360;
     padding: 1em;
+    margin-bottom: -2px;
 }
 
 .with-footer {
@@ -143,6 +155,17 @@ ul {
     
 }
 
+ol {
+    background-color: #cedbd8;
+    padding: 2em;
+}
+
+li {
+    color:  #516360;
+}
+/* .student-submit-list {
+    column-count: 3;
+} */
 /* .list-container {
     display: flex;
     flex-direction: column;
@@ -194,6 +217,10 @@ ul {
 table {
     background-color: #cedbd8;
 }
+th, td {
+    padding-left: 2em;
+}
+
 .footer-sing-student {
     padding: 1rem;
     margin-left: 2rem;
@@ -254,14 +281,18 @@ table {
 
 .goal-info-container {
     padding: .5em 1em 1em 2em;
-    width: 70%
+    width: 70%;
+    overflow: hidden;
 }
 
-
+.trial-submit-wrapper {
+    padding: 3em 0;
+}
 
 .add-trial-container {
-    padding: 1em;
+    padding-top: .75em;
     width: 30%;
+    margin: 0, auto;
 }
 
 .stack-top{
@@ -314,25 +345,29 @@ table {
 }
 
 /* Trial Submission Form */
-.container {
+/* .container {
     display: flex;  
     padding: 0%;
-    margin: 5%;
+    
     width: 50%;
     flex-direction: column;
-}
+} */
 .container-form {
     margin: auto;
     width: 50%;
-    padding: 0 25px;
+    
 }
+
+.student-form-container {
+    padding: 2em 0;
+}
+
 .student-id-trial {
     justify-content: flex-start;
-    color: #d3c6b7;
-    width: 60%;
-    text-align: left;
+    color: #516360;
+    padding-bottom: 3em;
 }
-.student-id-trial h3 {
+.student-name-header {
     background-color: #516360;
     color: #d3c6b7;
     margin-top: 0cm;
@@ -344,14 +379,22 @@ table {
     margin-bottom: 0cm;
     margin-top: 0cm;
 }
-.row h4 {
+/* .row h4 {
     background-color: #516360;
     color: #d3c6b7;
     width: 100%;
-}
+} */
 .input-header {
     width: 100%;
+    color: #d3c6b7;
+    background-color: #516360;
+    border-left: solid 1px #516360;
+    margin-right: -1px;
 }
+.login-header {
+    padding: .3em;
+}
+
 .input-field {
     width: 90%; 
     text-align: left;
@@ -389,6 +432,16 @@ footer {
     text-align: center;
 }
 
+/* @media screen and (max-width: 1024px) {
+    .goal-info-container {
+        padding-left: .75em;
+        width: 65%;
+    }
+    .add-trial-container {
+        width: 35%;
+    }
+} */
+
 @media screen and (max-width: 768px) {
     h2 {
         font-size: 3em;
@@ -396,5 +449,12 @@ footer {
     .goal-card {
         min-width: 90%;
         overflow-x: scroll;
+    }
+    .goal-info-container {
+        padding-left: .75em;
+        width: 80%;
+    }
+    .add-trial-container {
+        width: 20%;
     }
   }

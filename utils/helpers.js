@@ -8,4 +8,15 @@ Handlebars.registerHelper('times', function(n, block) {
     return accum;
 });
 
+Handlebars.registerHelper('create_uid', function() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    let uid;
+    return uid = s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
+  })
+
 module.exports = Handlebars;
