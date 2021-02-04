@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
 const withAuth = require("../utils/auth");
 
+// route to load user's goals
 router.get("/", withAuth, (req, res) => {
     const userId = req.session.user_id;
     const username = req.session.username;
@@ -18,15 +19,15 @@ router.get("/", withAuth, (req, res) => {
         ]
     })
     .then((goalData) => {
-        console.log(goalData)
+        // console.log(goalData)
         if (goalData == null) {
-        res.render("all-goal-view", {username, userId});
+        res.render("all-goal-view", {username, userId, loggedIn: req.session.loggedIn});
         }
         else {
         const userGoals = goalData.map((userGoal) => 
           userGoal.get({ plain: true })
         );
-        res.render("all-goal-view", {userGoals, username, userId});
+        res.render("all-goal-view", {userGoals, username, userId, loggedIn: req.session.loggedIn});
         }
         
       })
@@ -37,8 +38,9 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get('/submit', withAuth, (req, res) => {
+    const username = req.session.username
     const userId = req.session.user_id;
-    res.render('goal-submission', {userId, loggedIn: req.session.loggedIn})
+    res.render('goal-submission', {userId, username, loggedIn: req.session.loggedIn})
 });
 
 // option to add single goal route here

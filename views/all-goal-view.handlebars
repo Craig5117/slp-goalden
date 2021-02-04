@@ -1,7 +1,4 @@
 <div class="all-goals-container">
-  <h3 class="left">
-    Username:{{username}}
-  </h3>
   <div>
   
     {{#each userGoals as |goal|}}
@@ -29,12 +26,12 @@
     {{/each}}
   </div>
 </div>
-<footer class="footer-goal">
-  <a class="waves-effect waves-light btn modal-trigger" href="#add-goal-modal">New Goal</a>
+<footer class="new-post-footer sticky-footer stack-top">
+  <a class="waves-effect waves-light btn modal-trigger" href="/goals/submit">New Goal</a>
 </footer>
 
 
-<!-- Modal Structure -->
+{{!-- <!-- Modal Structure -->
 <div id="add-goal-modal" class="modal">
   <div class="modal-content">
     <h4>Goal</h4>
@@ -49,6 +46,6 @@
       Accept
     </button>
   </div>
-</div>
+</div> --}}
 
-<script src="/public/javascript/all-goal-view.js"></script>
+{{!-- <script src="/public/javascript/all-goal-view.js"></script> --}}

@@ -47,7 +47,9 @@ router.get('/', withAuth, (req, res) => {
 		});
 });
 
+// single-student route
 router.get('/student/:id', withAuth, (req, res) => {
+    const username = req.session.username;
 	const userId = req.session.user_id;
 	const studentId = req.params.id;
 	let studentName = 'Name';
@@ -93,6 +95,7 @@ router.get('/student/:id', withAuth, (req, res) => {
 
 				if (studentGoals[0] == null) {
 					res.render('single-student', {
+                        username,
 						studentGoals,
 						studentName,
 						studentId,
@@ -102,6 +105,7 @@ router.get('/student/:id', withAuth, (req, res) => {
 					const userIdComparison = studentGoals[0] ? studentGoals[0].user_id : -1;
 					if (userIdComparison === userId) {
 						res.render('single-student', {
+                            username,
 							studentGoals,
 							studentName,
 							studentId,

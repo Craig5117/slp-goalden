@@ -1,47 +1,64 @@
-<div class="sing-student-container">
-    <h4>
-        {{username}}
-    </h4>
-    <div>
-        <h4 class="left">
+<div class="sing-student-container with-footer">
+        <h4 class="">
             Student Name: {{studentName}}
         </h4>
+    <div class="row student-goals-container">
+    
 
         {{#each studentGoals as |studentGoal|}}
-        <table class="striped centered responsive-table" style="border: 3px #516360 solid;">
-            <thead>
-                <tr>
-                    <th>Goal</th>
-                    <th>Goal Description</th>
-                    <th>Trial Date</th>
-                    <th>Successful Trials</th>
-                    <th>Percentage of Successful Trials</th>
-                </tr>
-            </thead>
+        <div class="card col s5 goal-card" style="border: 3px #516360 solid;">
+            <div class="table-header">
 
-            <tbody>
-                {{#each studentGoal.trials as |trial|}}
-                <tr>
-                    <td>{{studentGoal.goal.name}}</td>
-                    <td>{{studentGoal.goal.description}}</td>
-                    <td>{{trial.date}}</td>
-                    <td>{{trial.successful}}</td>
-                    <td>{{trial.percent}}</td>                      
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
+                <div class="table-info">
+                    <div class="goal-info-container">
+                        <h5 class="card-title">{{studentGoal.goal.name}}</h5>
+                        <p>{{studentGoal.goal.description}}</p>
+                    </div>
+                    <div class="add-trial-container">
+                        <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light"
+                            class="add-trial">+ Trial Data</a>
+                    </div>
+                </div>
+            </div>
+            <table class="striped centered responsive-table table-height">
+                <thead>
+                    <tr>
+
+                        <th>Trial Date</th>
+                        <th>Successful Trials</th>
+                        <th>Percentage of Successful Trials</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{#each studentGoal.trials as |trial|}}
+                    <tr>
+
+                        <td>{{trial.date}}</td>
+                        <td>{{trial.successful}}</td>
+                        <td>{{trial.percent}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
         {{/each}}
+
     </div>
 </div>
 
 
-<footer class="footer-sing-student">
-    <a class="waves-effect waves-light btn modal-trigger" href="/students/add-studentgoal/{{studentId}}">Add Goal to
+<footer class="new-post-footer sticky-footer stack-top">
+    <a class="waves-effect waves-light btn stack-top" href="/students/add-studentgoal/{{studentId}}">Add Goal to
         Student</a>
-    <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">+ Trial Data</a>
+
 </footer>
 
+
+{{!-- <th>Goal</th>
+<th>Goal Description</th>
+<td></td>
+<td></td> --}}
 
 {{!--
 <div class="wrapper" style="border: 3px #516360 solid;">
