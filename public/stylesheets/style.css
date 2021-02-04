@@ -194,7 +194,7 @@ table {
 
 /* Trial Submission Form */
 .container {
-    display: flex;  
+    display: grid;  
     padding: 0%;
     margin: 5%;
     width: 50%;
@@ -208,15 +208,23 @@ table {
 .student-id-trial {
     justify-content: flex-start;
     color: #d3c6b7;
-    width: 60%;
+    width: 100%;
     text-align: left;
 }
 .student-id-trial h3 {
     background-color: #516360;
     color: #d3c6b7;
     margin-top: 0cm;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     padding-top: 1rem;
+}
+.student-id-trial h4 {
+    padding-top: 0rem;
+    margin-top: 0%;
+}
+.student-id-trial p {
+    color: #516360;
+    padding-bottom: 1rem;
 }
 .row {
     margin-right: 0cm;
@@ -230,6 +238,9 @@ table {
 }
 .input-header {
     width: 100%;
+    margin-top: 0%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .input-field {
     width: 90%; 
