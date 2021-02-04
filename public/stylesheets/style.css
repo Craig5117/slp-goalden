@@ -20,7 +20,7 @@ label {
     text-align:center;
     font-size: 31px;
     padding: 7px 0;
-    font-family: "Amatic SC";
+   
     font-size: 48px;
 }
 
@@ -70,13 +70,19 @@ body {
     background-color: #edd8ca;
 }
 
+h1 {
+    margin: 0;
+    padding-bottom: .1em;
+}
+
 .logo {
     font-size: 5rem;
+    /* font-family: "Amatic SC"; */
     font-weight: bold;
-    padding-left: 1.5rem;
+    /* padding-left: 1.5rem; */
     border-top: solid 1px #516360;
     margin-top: -1px;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     background-image: linear-gradient(to bottom right, #CDB153, white);
     background-clip: text;
     -webkit-background-clip: text;
@@ -211,7 +217,7 @@ table {
 .goal-card {
     /* width: 75%; */
     background-color:  #516360;
-    height: 21em;
+    height: 23em;
     overflow-y: scroll;
 
 }
@@ -237,7 +243,7 @@ table {
     color: #cedbd8;
     background-color: #516360;
     width: 100%;    
-    height: 7em;
+    height: 9em;
 }
 
 .table-info {
@@ -251,10 +257,7 @@ table {
     width: 70%
 }
 
-.add-trial {
-    position: relative;
-    z-index: -1;
-}
+
 
 .add-trial-container {
     padding: 1em;
@@ -385,3 +388,13 @@ footer {
     padding: 10px;
     text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 3em;
+    }
+    .goal-card {
+        min-width: 90%;
+        overflow-x: scroll;
+    }
+  }

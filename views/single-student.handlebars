@@ -15,18 +15,19 @@
                         <p>{{studentGoal.goal.description}}</p>
                     </div>
                     <div class="add-trial-container">
-                        <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light"
-                            class="add-trial">+ Trial Data</a>
+                        <a href="/students/trial-submit/{{studentGoal.id}}" class="btn waves-effect waves-light">Data
+                            <i class="material-icons left">add_circle_outline</i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <table class="striped centered responsive-table table-height">
+            <table class="striped responsive-table table-height">
                 <thead>
                     <tr>
 
                         <th>Trial Date</th>
                         <th>Successful Trials</th>
-                        <th>Percentage of Successful Trials</th>
+                        <th>Percentile Score</th>
                     </tr>
                 </thead>
 
@@ -49,8 +50,9 @@
 
 
 <footer class="new-post-footer sticky-footer stack-top">
-    <a class="waves-effect waves-light btn stack-top" href="/students/add-studentgoal/{{studentId}}">Add Goal to
-        Student</a>
+    <a class="waves-effect waves-light btn stack-top" href="/students/add-studentgoal/{{studentId}}">Student Goal
+    <i class="material-icons left">add_circle_outline</i>
+    </a>
 
 </footer>
 
