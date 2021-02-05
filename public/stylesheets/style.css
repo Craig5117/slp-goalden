@@ -136,6 +136,11 @@ h5 {
     margin-top: 0cm;
     color:  #516360;
 }
+
+.student-goal-title {
+    color: #cedbd8;
+}
+
 .btn {
     background-color: #6d9387; 
     border: none;
