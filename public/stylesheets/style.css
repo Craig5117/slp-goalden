@@ -31,14 +31,7 @@ label {
     background-position: right center;
     background-size: 50%;
 }
-/* .marquee {
-    background-color: rgb(142, 155, 142);
-    text-align:center;
-    font-size: 31px;
-    padding: 7px 0;
-   
-    font-size: 48px;
-} */
+
 .page-text {
     color: #516360;
     width: 75%;
@@ -181,19 +174,7 @@ ol {
 li {
     color:  #516360;
 }
-/* .student-submit-list {
-    column-count: 3;
-} */
-/* .list-container {
-    display: flex;
-    flex-direction: column;
-}  */
 
-/* .list-item {
-    background-color: #6d9387;
-    border-radius: .5em;
-    margin: .5em
-} */
 
 /* MODAL STYLING */
 .modal-input{
@@ -232,8 +213,6 @@ li {
 
 /* Single-Student */
 .sing-student-container {
-    /* display: flex;
-    padding: 2rem; */
     width: 100%;
 }
 table {
@@ -254,17 +233,9 @@ th, td {
     position: fixed;
     box-shadow: 0px -4px 3px rgba(35, 16, 16, 0.5);
 }
- /* .wrapper { 
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 75%;
-    background-color: #cedbd8;
-    
-} */
+
 
 .goal-card {
-    /* width: 75%; */
     background-color:  #516360;
     height: 23em;
     overflow-y: scroll;
@@ -272,8 +243,6 @@ th, td {
 }
 
 .student-goals-container {
-    /* display: flex; */
-    /* justify-content: space-between;  */
     width: 90%;
     margin: 0 auto;
 }
@@ -325,33 +294,7 @@ th, td {
     max-height: 14em;
     overflow-y: scroll;
 }
-/*
-.goals-input {
-    width: 100%;
-    text-align: center;
-}
-.student-name-wrapper {
-    width: 100%; 
-    text-align: center;
-    background-color: #516360;
-    color: #d3c6b7;
-}
-.student-name {
-    color: #d3c6b7;
-}
-.goals-wrapper {
-    width: 100%; 
-    text-align: center;
-}
-.student-trials {
-    width: 100%;
-    text-align: center;
-}
-.wrapper a {
-    width: 20%;
-    text-align: center; 
-}
-}  */
+
 a {
     color: #516360;
 }
@@ -367,13 +310,7 @@ a {
 }
 
 /* Trial Submission Form */
-/* .container {
-    display: flex;  
-    padding: 0%;
-    
-    width: 50%;
-    flex-direction: column;
-} */
+
 .container-form {
     margin: 2em 0;
     width: 50%;
@@ -401,11 +338,7 @@ a {
     margin-bottom: 0cm;
     margin-top: 0cm;
 }
-/* .row h4 {
-    background-color: #516360;
-    color: #d3c6b7;
-    width: 100%;
-} */
+
 .input-header {
     width: 100%;
     color: #d3c6b7;
@@ -454,15 +387,6 @@ footer {
     text-align: center;
 }
 
-/* @media screen and (max-width: 1024px) {
-    .goal-info-container {
-        padding-left: .75em;
-        width: 65%;
-    }
-    .add-trial-container {
-        width: 35%;
-    }
-} */
 
 @media screen and (max-width: 768px) {
     h2 {
