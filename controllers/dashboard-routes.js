@@ -3,11 +3,12 @@ const sequelize = require("../config/connection");
 const { User, Student, Goal, StudentGoal, Trial } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect("/students")
-    }
-  res.render("login");
+router.get("/", (req, res, next) => {
+    if (req.session.loggedIn) {    
+    return res.redirect("/students");
+    } 
+  
+   return res.render("login");
 });
 
 // router.get("/dashboard", withAuth, (req, res) => {

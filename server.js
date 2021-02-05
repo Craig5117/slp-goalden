@@ -1,6 +1,6 @@
 const sequelize = require("./config/connection");
 const express = require("express");
-
+const cookieParser = require("cookie-parser")
 const routes = require("./controllers");
 const helpers = require("./utils/helpers.js");
 const path = require("path");
@@ -16,8 +16,7 @@ const sess = {
   // can set maxAge here
   // maxAge: 86400000, for example, would expire the cookie after 24hours
   cookie: { 
-    secure: process.env.NODE_ENV === "production" ? true : false,
-    sameSite: "strict"
+    
 },
   resave: false,
   saveUninitialized: true,
@@ -33,6 +32,7 @@ const PORT = process.env.PORT || 3001;
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
+app.use(cookieParser());
 // use session
 app.use(session(sess));
 // middleware for post requests

@@ -24,6 +24,12 @@ router.post("/", (req, res) => {
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
 
+        // res.cookie("authorization", req.session, {
+        //     expires: new Date(Date.now() + "1440m"),
+        //     secure: process.env.NODE_ENV === "production" ? true : false,
+        //     sameSite: true,
+        //     httpOnly: true
+        // })
         res.json(dbUserData);
       });
     })
@@ -57,7 +63,13 @@ router.post("/login", (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
-  
+        
+        res.cookie("authorization", req.session, {
+            expires: new Date(Date.now() + "1440m"),
+            secure: process.env.NODE_ENV === "production" ? true : false,
+            sameSite: true,
+            httpOnly: true
+        })
         res.json({ user: dbUserData, message: "You are now logged in!" });
       });
     })
