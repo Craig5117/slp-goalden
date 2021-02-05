@@ -57,19 +57,21 @@ router.post("/login", (req, res) => {
          res.status(400).json({ message: "Password does not match with email address." });
        return;
        }
-       
+    res.cookie("authorization", req.session, {
+        expires: new Date(Date.now() + "1440m"),
+        secure: process.env.NODE_ENV === "production" ? true : false,
+        sameSite: true,
+        httpOnly: true
+    })
+    res.set("authorization", req.session);
+    console.log("This is cookie data", req.session)
       req.session.save(() => {
         // sets session variables to confirm user is logged in
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
         
-        res.cookie("authorization", req.session, {
-            expires: new Date(Date.now() + "1440m"),
-            secure: process.env.NODE_ENV === "production" ? true : false,
-            sameSite: true,
-            httpOnly: true
-        })
+     
         res.json({ user: dbUserData, message: "You are now logged in!" });
       });
     })

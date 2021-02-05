@@ -15,9 +15,9 @@ const sess = {
   secret: "aywtd?inshfy?283",
   // can set maxAge here
   // maxAge: 86400000, for example, would expire the cookie after 24hours
-  cookie: { 
+//   cookie: { 
     
-},
+// },
   resave: false,
   saveUninitialized: true,
   // stores the new session to the database exported in config/connection
